@@ -1,3 +1,104 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+# Frontend der Anwendung im webController definiert!
+
+startseite:
+    path:     /
+    defaults: { _controller: AppBundle:Website:startseite }
+
+kontakt:
+    path:     /kontakt
+    defaults: { _controller: AppBundle:Website:kontakt }
+
+anmelden:
+    path:     /anmelden
+    defaults: { _controller: AppBundle:Website:anmelden }
+
+# Backend der Anwendung definiert!
+
+Dashboard:
+    path:     /dashboard
+    defaults: { _controller: AppBundle:Website:dashboard }
+
+# Todo´s-Application
+
+Todos_anzeigen:
+    path:     /dashboard/todos
+    defaults: { _controller: AppBundle:todo:anzeigen }
+
+Todos_erstellen:
+    path:     /dashboard/todos/erstellen
+    defaults: { _controller: AppBundle:todo:erstellen }
+
+Todos_bearbeiten:
+    path:     /dashboard/todos/bearbeiten/{id}
+    defaults: { _controller: AppBundle:todo:bearbeiten }
+
+Todos_details:
+    path:     /dashboard/todos/details/{id}
+    defaults: { _controller: AppBundle:todo:details }
+
+Todos_delete:
+    path:     /dashboard/todos/löschen/{id}
+    defaults: { _controller: AppBundle:todo:löschen }
+
+# Anmeldebereich! Teststatus
+
+login:
+    path:     /login
+    defaults: { _controller: AppBundle:security:anmelden }
+
+# Newsseite zum Üben, warten auf Sven´s Aufgaben! Funktioniert!
+
+News_anzeigen:
+    path:     /dashboard/news
+    defaults: { _controller: AppBundle:news:anzeigen }
+
+News_erstellen:
+    path:     /dashboard/news/erstellen
+    defaults: { _controller: AppBundle:news:erstellen }
+
+#Mitarbeiter
+
+Mitarbeiter_anzeigen:
+    path:     /dashboard/mitarbeiter
+    defaults: { _controller: AppBundle:mitarbeiter:anzeigen }
+
+Mitarbeiter_erstellen:
+    path:     /dashboard/mitarbeiter/erstellen
+    defaults: { _controller: AppBundle:mitarbeiter:erstellen }
+
+Mitarbeiter_bearbeiten:
+    path:     /dashboard/mitarbeiter/bearbeiten/{id}
+    defaults: { _controller: AppBundle:mitarbeiter:bearbeiten }
+
+Mitarbeiter_details:
+    path:     /dashboard/mitarbeiter/details/{id}
+    defaults: { _controller: AppBundle:mitarbeiter:details }
+
+Mitarbeiter_löschen:
+    path:     /dashboard/mitarbeiter/löschen/{id}
+    defaults: { _controller: AppBundle:mitarbeiter:löschen }
+
+# Finanzen
+
+Finanzen_anzeigen:
+    path:     /dashboard/finanzen
+    defaults: { _controller: AppBundle:finanzen:anzeigen }
+
+# Projekte
+
+Projekte_anzeigen:
+    path:     /dashboard/projekte
+    defaults: { _controller: AppBundle:projekte:anzeigen}
+
+# Kunden
+
+Kunden_anzeigen:
+    path:     /dashboard/kunden
+    defaults: { _controller: AppBundle:kunden:anzeigen}
+
+
+
