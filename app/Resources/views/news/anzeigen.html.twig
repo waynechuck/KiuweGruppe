@@ -1,0 +1,36 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    <div class="panel-heading">
+        <h3 class="panel-title"><center>Übersicht der aktuelle News</center></h3>
+    </div>
+    <div class="jumbotron">
+        {#@TODO keine hartgecodeten URLS verwenden#}
+        <a class="btn btn-primary" href="/dashboard/news/erstellen">News erstellen</a>
+        <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID-Nummer</th>
+            <th>Artikel</th>
+            <th>Autor</th>
+            <th>Datum der Veröffentlichung</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for news in news %}
+            <tr>
+                <th scope="row">{{ news.id }}</th>
+                <td>{{ news.artikel }}</td>
+                <td>{{ news.autor}} </td>
+                <td>{{ news.veroeffentlichungsdatum|date('j F Y')}} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+
+{% endblock %}

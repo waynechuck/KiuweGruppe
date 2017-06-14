@@ -10,7 +10,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class WebsiteController extends Controller
+class WebseitenController extends Controller
 {
     public function startseiteAction()
     {
