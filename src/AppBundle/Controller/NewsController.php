@@ -32,9 +32,9 @@ class NewsController extends Controller
             ->findAll();
 
         //@TODO die gibt es nicht
-        return $this->render('news/anzeigen.html.twig', array(
+        return $this->render('news/anzeigen.html.twig', [
             'news' => $news
-        ));
+        ]);
     }
 
     public function erstellenAction(Request $request)
@@ -48,16 +48,21 @@ class NewsController extends Controller
         $news = new news;
 
         $form =$this->createFormBuilder($news)
-            ->add('artikelname', TextType::class, array('attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
-            ->add('artikel', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
-            ->add('autor', TextType::class, array('attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
+            //TextType
+            ->add('artikelname', TextType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('artikel', TextareaType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('autor', TextType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
 
-            ->add('veroeffentlichungsdatum', DateType::class, array(
-                'placeholder' => array(
-                    'year' => 'Jahr', 'month' => 'Monat', 'day' => 'Tag'),
-                'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            //DateType
+            ->add('veroeffentlichungsdatum', DateType::class, [
+                'placeholder' => [
+                    'year' => 'Jahr',
+                    'month' => 'Monat',
+                    'day' => 'Tag'],
+                'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
 
-            ->add('save', SubmitType::class, array('label' => 'News veröffentlichen', 'attr' => array('class' => 'btn btn-primary', 'style' =>'margin-bottom:15px')))
+            //SubmitType
+            ->add('save', SubmitType::class, ['label' => 'News veröffentlichen', 'attr' => ['class' => 'btn btn-primary', 'style' =>'margin-bottom:15px']])
             ->getForm();
 
         $form->handleRequest($request);
@@ -92,8 +97,8 @@ class NewsController extends Controller
             return $this->redirectToRoute('News_anzeigen');
         }
 
-        return $this->render('news/erstellen.html.twig', array(
+        return $this->render('news/erstellen.html.twig', [
             'form' => $form->createView()
-        ));
+        ]);
     }
 }

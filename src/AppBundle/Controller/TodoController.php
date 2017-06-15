@@ -28,7 +28,6 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class TodoController extends Controller
 {
-
     public function anzeigenAction()
     {
         //@TODO Typo in word
@@ -116,12 +115,12 @@ class TodoController extends Controller
             $todo->setCreateDate($now);
 
         $form =$this->createFormBuilder($todo)
-            ->add('name', TextType::class, array('attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
-            ->add('category', TextType::class, array('attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
-            ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
-            ->add('priority', ChoiceType::class, array('choices' => array('Low' => 'Low', 'Normal' => 'Normal', 'High' => 'High'), 'attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
-            ->add('dueDate', DateTimeType::class, array('attr' => array('class' => 'formcontrol', 'style' =>'margin-bottom:15px')))
-            ->add('save', SubmitType::class, array('label' => 'Update Todo', 'attr' => array('class' => 'btn btn-primary', 'style' =>'margin-bottom:15px')))
+            ->add('name', TextType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('category', TextType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('description', TextareaType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('priority', ChoiceType::class, ['choices' => ['Low' => 'Low', 'Normal' => 'Normal', 'High' => 'High'], 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('dueDate', DateTimeType::class, ['attr' => ['class' => 'formcontrol', 'style' =>'margin-bottom:15px']])
+            ->add('save', SubmitType::class, ['label' => 'Update Todo', 'attr' => ['class' => 'btn btn-primary', 'style' =>'margin-bottom:15px']])
             ->getForm();
 
         $form->handleRequest($request);
@@ -156,10 +155,10 @@ class TodoController extends Controller
             return $this->redirectToRoute('Totos_anzeigen');
         }
 
-        return $this->render('todo/bearbeiten.html.twig', array(
+        return $this->render('todo/bearbeiten.html.twig', [
             'todo' => $todo,
             'form' => $form->createView()
-        ));
+        ]);
     }
 
     public function detailsAction($id){
@@ -168,9 +167,9 @@ class TodoController extends Controller
             ->getRepository('AppBundle:Todo')
             ->find($id);
 
-        return $this->render('todo/details.html.twig', array(
+        return $this->render('todo/details.html.twig', [
             'todo' => $todo
-        ));
+        ]);
     }
 
     public function löschenAction($id)
