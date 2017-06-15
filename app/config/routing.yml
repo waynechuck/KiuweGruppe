@@ -100,5 +100,11 @@ Kunden_anzeigen:
     path:     /dashboard/kunden
     defaults: { _controller: AppBundle:Kunden:anzeigen}
 
+ # Wiki
+
+Wiki_anzeigen:
+    path:     /dashboard/wiki
+    defaults: { _controller: AppBundle:Wiki:anzeigen}
+
 
 
