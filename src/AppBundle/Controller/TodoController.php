@@ -37,9 +37,9 @@ class TodoController extends Controller
             ->findAll();
 
         //@TODO kurze array Syntax
-        return $this->render('todo/anzeigen.html.twig', array(
+        return $this->render('todo/anzeigen.html.twig', [
             'todos' => $todos
-        ));
+        ]);
     }
 
     public function erstellenAction(Request $request)
@@ -53,12 +53,12 @@ class TodoController extends Controller
 
         $form =$this->createFormBuilder($todo)
             //@TODO kurze array Syntax
-            ->add('name', TextType::class, array('attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
-            ->add('category', TextType::class, array('attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
-            ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
-            ->add('priority', ChoiceType::class, array('choices' => array('Low' => 'Low', 'Normal' => 'Normal', 'High' => 'High'), 'attr' => array('class' => 'form-control', 'style' =>'margin-bottom:15px')))
-            ->add('dueDate', DateTimeType::class, array('attr' => array('class' => 'formcontrol', 'style' =>'margin-bottom:15px')))
-            ->add('save', SubmitType::class, array('label' => 'Create Todo', 'attr' => array('class' => 'btn btn-primary', 'style' =>'margin-bottom:15px')))
+            ->add('name', TextType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('category', TextType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('description', TextareaType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('priority', ChoiceType::class, ['choices' => ['Low' => 'Low', 'Normal' => 'Normal', 'High' => 'High'], 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('dueDate', DateTimeType::class, ['attr' => ['class' => 'formcontrol', 'style' =>'margin-bottom:15px']])
+            ->add('save', SubmitType::class, ['label' => 'Create Todo', 'attr' => ['class' => 'btn btn-primary', 'style' =>'margin-bottom:15px']])
             ->getForm();
 
         $form->handleRequest($request);
@@ -95,9 +95,9 @@ class TodoController extends Controller
             return $this->redirectToRoute('Todos_anzeigen');
         }
 
-        return $this->render('todo/erstellen.html.twig', array(
+        return $this->render('todo/erstellen.html.twig', [
             'form' => $form->createView()
-        ));
+        ]);
     }
 
     public function bearbeitenAction($id, Request $request)

@@ -29,6 +29,6 @@ class WebseitenController extends Controller
 
     public function dashboardAction()
     {
-        return $this->render('dashboard/anzeigen.html.twig');
+        return $this->render('webseite/dashboard.html.twig');
     }
 }
