@@ -44,7 +44,6 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="{{ path('Startseite') }}">Startseite</a></li>
-                            <li><a href="{{ path('Kontakt') }}">Kontakt</a></li>
                             <li><a href="{{ path('Anmelden') }}">Anmelden</a></li>
                             <li><a href="{{ path('Dashboard') }}">Dashboard</a></li>
                         </ul>
@@ -84,14 +83,16 @@
                 <!-- Footer mittlere Spalte -->
                 <div class="col-md-4">
                     <h3> Informationen </h3>
-                    <p> AGB´s </p>
-
+                    <p><a href="{{ path('AGB') }}">AGB´s</a></p>
+                    <p><a href="{{ path('Karriere') }}">Karriere</a></p>
+                    <p><a href="{{ path('Impressum') }}">Impressum</a></p>
+                    <p><a href="{{ path('Kontakt') }}">Kontakt</a></p>
                 </div>
 
                 <!-- Footer rechte Spalte -->
                 <div class="col-md-4">
-                    <h3> Sozialnetwork</h3>
-                    <p> Facebook </p>
+                    <h3> Idee? </h3>
+                    <p> LINK</p>
                 </div>
 
             </div>
@@ -100,10 +101,7 @@
 
     <p>&copy; Design by Michael Trotzer</p>
 
-
 </div>
-
-
 {% block javascripts %}{% endblock %}
 </body>
 </html>

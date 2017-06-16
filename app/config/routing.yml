@@ -16,6 +16,18 @@ Anmelden:
     path:     /anmelden
     defaults: { _controller: AppBundle:Webseiten:anmelden }
 
+Karriere:
+    path:     /karriere
+    defaults: { _controller: AppBundle:Karriere:anzeigen}
+
+AGB:
+    path:     /agb
+    defaults: { _controller: AppBundle:Webseiten:agb}
+
+Impressum:
+    path:     /impressum
+    defaults: { _controller: AppBundle:Webseiten:impressum}
+
 # Backend der Anwendung definiert!
 
 Dashboard:
