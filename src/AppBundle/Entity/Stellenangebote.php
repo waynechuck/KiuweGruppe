@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Karriere
+ * Stellenangebote
  *
- * @ORM\Table(name="karriere")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\KarriereRepository")
+ * @ORM\Table(name="stellenangebot")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\StellenangeboteRepository")
  */
-class Karriere
+class Stellenangebote
 {
     /**
      * @var int
@@ -93,7 +93,7 @@ class Karriere
      *
      * @param string $jobbezeichnung
      *
-     * @return Karriere
+     * @return Stellenangebote
      */
     public function setJobbezeichnung($jobbezeichnung)
     {
@@ -117,7 +117,7 @@ class Karriere
      *
      * @param string $arbeitsort
      *
-     * @return Karriere
+     * @return Stellenangebote
      */
     public function setArbeitsort($arbeitsort)
     {
@@ -141,7 +141,7 @@ class Karriere
      *
      * @param string $zweig
      *
-     * @return Karriere
+     * @return Stellenangebote
      */
     public function setZweig($zweig)
     {
@@ -165,7 +165,7 @@ class Karriere
      *
      * @param string $joblevel
      *
-     * @return Karriere
+     * @return Stellenangebote
      */
     public function setJoblevel($joblevel)
     {
@@ -189,7 +189,7 @@ class Karriere
      *
      * @param \DateTime $erstelldatum
      *
-     * @return Karriere
+     * @return Stellenangebote
      */
     public function setErstelldatum($erstelldatum)
     {
@@ -213,7 +213,7 @@ class Karriere
      *
      * @param string $besetzungszeitpunkt
      *
-     * @return Karriere
+     * @return Stellenangebote
      */
     public function setBesetzungszeitpunkt($besetzungszeitpunkt)
     {
@@ -237,7 +237,7 @@ class Karriere
      *
      * @param string $arbeitsumfeld
      *
-     * @return Karriere
+     * @return Stellenangebote
      */
     public function setArbeitsumfeld($arbeitsumfeld)
     {
@@ -261,7 +261,7 @@ class Karriere
      *
      * @param string $aufgaben
      *
-     * @return Karriere
+     * @return Stellenangebote
      */
     public function setAufgaben($aufgaben)
     {

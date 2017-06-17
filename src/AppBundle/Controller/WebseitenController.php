@@ -42,5 +42,9 @@ class WebseitenController extends Controller
         return $this->render('webseite/impressum.html.twig');
     }
 
+    public function karriereAction()
+    {
+        return $this->render('webseite/karriere.html.twig');
+    }
 
 }

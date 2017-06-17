@@ -97,7 +97,7 @@ class NewsController extends Controller
             return $this->redirectToRoute('News_anzeigen');
         }
 
-        return $this->render('news/erstellen.html.twig', [
+        return $this->render('news/erstellen.html.twig.html.twig', [
             'form' => $form->createView()
         ]);
     }
