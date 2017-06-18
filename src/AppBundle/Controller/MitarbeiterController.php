@@ -202,7 +202,7 @@ class MitarbeiterController extends Controller
             return $this->redirectToRoute('Mitarbeiter_anzeigen');
         }
 
-        return $this->render('mitarbeiter/erstellen.html.twig.html.twig', [
+        return $this->render('mitarbeiter/erstellen.html.twig', [
             'form' => $form->createView()
         ]);
     }

@@ -27,11 +27,11 @@
                     <td>{{ todo.dueDate|date('F j, Y, g:i a')}}</td>
                     <td>
                         {#@TODO keine hartgecodeten URLS verwenden#}
-                        <a href="/dashboard/todos/details/{{ todo.id }}" class="btn btn-success">Details</a>
+                        <a class='btn btn-success btn-xs' href="/dashboard/todos/details/{{ todo.id }}"><span class="glyphicon glyphicon-search"></span> Details</a>
                         {#@TODO keine hartgecodeten URLS verwenden#}
-                        <a href="/dashboard/todos/bearbeiten/{{ todo.id }}" class="btn btn-info">Bearbeiten</a>
+                        <a class='btn btn-info btn-xs' href="/dashboard/todos/bearbeiten/{{ todo.id }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
                         {#@TODO keine hartgecodeten URLS verwenden#}
-                        <a href="/dashboard/todos/löschen/{{ todo.id }}" class="btn btn-danger">Löschen</a>
+                        <a href="/dashboard/todos/löschen/{{ todo.id }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Löschen</a>
                     </td>
                 </tr>
             {% endfor %}

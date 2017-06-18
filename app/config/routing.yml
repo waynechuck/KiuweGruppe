@@ -36,9 +36,9 @@ Stellenangebote_anzeigen:
     path:     /dashboard/stellenangebot
     defaults: { _controller: AppBundle:Stellenangebote:anzeigen}
 
-Stellenangebote_bewerben:
-    path:     /karriere/bewerben
-    defaults: { _controller: AppBundle:Stellenangebote:bewerben}
+Stellenangebote_erstellen:
+    path:     /dashboard/stellenangebot/erstellen
+    defaults: { _controller: AppBundle:Stellenangebote:erstellen}
 
 # Backend der Anwendung definiert!
 
@@ -59,8 +59,8 @@ News_anzeigen:
     defaults: { _controller: AppBundle:News:anzeigen }
 
 News_erstellen:
-    path:     /dashboard/news/erstellen.html.twig
-    defaults: { _controller: AppBundle:News:erstellen.html.twig }
+    path:     /dashboard/news/erstellen
+    defaults: { _controller: AppBundle:News:erstellen }
 
 #Mitarbeiter
 
@@ -69,8 +69,8 @@ Mitarbeiter_anzeigen:
     defaults: { _controller: AppBundle:Mitarbeiter:anzeigen }
 
 Mitarbeiter_erstellen:
-    path:     /dashboard/mitarbeiter/erstellen.html.twig
-    defaults: { _controller: AppBundle:Mitarbeiter:erstellen.html.twig }
+    path:     /dashboard/mitarbeiter/erstellen
+    defaults: { _controller: AppBundle:Mitarbeiter:erstellen }
 
 Mitarbeiter_bearbeiten:
     path:     /dashboard/mitarbeiter/bearbeiten/{id}
@@ -91,8 +91,8 @@ Todos_anzeigen:
     defaults: { _controller: AppBundle:Todo:anzeigen }
 
 Todos_erstellen:
-    path:     /dashboard/todos/erstellen.html.twig
-    defaults: { _controller: AppBundle:Todo:erstellen.html.twig }
+    path:     /dashboard/todos/erstellen
+    defaults: { _controller: AppBundle:Todo:erstellen }
 
 Todos_bearbeiten:
     path:     /dashboard/todos/bearbeiten/{id}

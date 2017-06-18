@@ -3,7 +3,7 @@
 {% block body %}
 
     <div class="panel-heading">
-            <a href="{{ path('Dashboard') }}" class="btn btn-default btn-xs">zurück</a>
+        <a class='btn btn-primary btn-xs' href="{{ path('Dashboard') }}"><span class="glyphicon glyphicon-home"></span></a>
     </div>
 
     <div class="jumbotron">
@@ -16,7 +16,7 @@
         <div class="row">
             <!-- linke Spalte -->
             <div class="col-md-3">
-                <a href="{{ path('Mitarbeiter_erstellen') }}" class="btn btn-primary">Mitarbeiterprofil anlegen</a>
+                <a class='btn btn-primary btn-xs' href="{{ path('Mitarbeiter_erstellen') }}"><span class="glyphicon glyphicon-pencil"></span> Mitarbeiterprofil anlegen</a>
             </div>
         </div>
         <table class="table table-striped table-hover">
@@ -39,15 +39,12 @@
                     <td> {{ mitarbeiter.telefon }} </td>
                     <td> {{ mitarbeiter.position}} </td>
                     <td>
-                        <a href="{{ path('Mitarbeiter_details', { 'id' : mitarbeiter.id }) }}" class="btn btn-success">
-                            Details
-                        </a>
-                        <a href="{{ path('Mitarbeiter_bearbeiten', { 'id' : mitarbeiter.id }) }}" class="btn btn-info">
-                            Bearbeiten
-                        </a>
-                        <a href="{{ path('Mitarbeiter_löschen', { 'id' : mitarbeiter.id }) }}" class="btn btn-danger">
-                            Löschen
-                        </a>
+                        {#@TODO keine hartgecodeten URLS verwenden#}
+                        <a class='btn btn-success btn-xs' href="{{ path('Mitarbeiter_details', { 'id' : mitarbeiter.id }) }}"><span class="glyphicon glyphicon-search"></span> Details</a>
+                        {#@TODO keine hartgecodeten URLS verwenden#}
+                        <a class='btn btn-info btn-xs' href="{{ path('Mitarbeiter_bearbeiten', { 'id' : mitarbeiter.id }) }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
+                        {#@TODO keine hartgecodeten URLS verwenden#}
+                        <a href="{{ path('Mitarbeiter_löschen', { 'id' : mitarbeiter.id }) }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Löschen</a>
                     </td>
                 </tr>
             {% endfor %}

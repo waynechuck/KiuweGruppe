@@ -57,9 +57,9 @@ class Stellenangebote
     private $erstelldatum;
 
     /**
-     * @var string
+     * @var DateTime
      *
-     * @ORM\Column(name="Besetzungszeitpunkt", type="string", length=255)
+     * @ORM\Column(name="Besetzungszeitpunkt", type="datetime")
      */
     private $besetzungszeitpunkt;
 
@@ -211,7 +211,7 @@ class Stellenangebote
     /**
      * Set besetzungszeitpunkt
      *
-     * @param string $besetzungszeitpunkt
+     * @param DateTime $besetzungszeitpunkt
      *
      * @return Stellenangebote
      */
@@ -225,7 +225,7 @@ class Stellenangebote
     /**
      * Get besetzungszeitpunkt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getBesetzungszeitpunkt()
     {
