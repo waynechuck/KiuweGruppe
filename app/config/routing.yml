@@ -30,7 +30,7 @@ Impressum:
     path:     /impressum
     defaults: { _controller: AppBundle:Webseiten:impressum}
 
-# Stellenangebote im Dashboard bei Mitarbeiter, neues Stellenangebot erstellen.html.twig
+# Stellenangebote im Dashboard bei Mitarbeiter
 
 Stellenangebote_anzeigen:
     path:     /dashboard/stellenangebot
@@ -39,6 +39,23 @@ Stellenangebote_anzeigen:
 Stellenangebote_erstellen:
     path:     /dashboard/stellenangebot/erstellen
     defaults: { _controller: AppBundle:Stellenangebote:erstellen}
+
+Stellenangebote_bearbeiten:
+    path:     /dashboard/stellenangebot/bearbeiten/{id}
+    defaults: { _controller: AppBundle:Stellenangebote:bearbeiten }
+
+Stellenangebote_details:
+    path:     /dashboard/stellenangebot/details/{id}
+    defaults: { _controller: AppBundle:Stellenangebote:details }
+
+Stellenangebote_anzeigenfrontend:
+    path:     /karriere/stellenangebote
+    defaults: { _controller: AppBundle:Stellenangebote:anzeigenfrontend }
+
+
+Stellenangebote_löschen:
+    path:     /dashboard/stellenangebot/löschen/{id}
+    defaults: { _controller: AppBundle:Stellenangebote:löschen }
 
 # Backend der Anwendung definiert!
 

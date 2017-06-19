@@ -1,24 +1,14 @@
-    {% extends 'backend.html.twig' %}
+{% extends 'base.html.twig' %}
 
     {% block body %}
 
-        <div class="panel-heading">
-            <a class='btn btn-primary btn-xs' href="{{ path('Dashboard') }}"><span class="glyphicon glyphicon-home"></span></a>
-        </div>
-
         <div class="jumbotron">
-            <div class="row">
-                <h1 class="panel-title"><center>Übersicht der Stellenangebote</center></h1>
-            </div>
+                <h3 class="panel-title">Übersicht der Stellenangebote</h3>
+
+            Die nachfolgenden ....
 
             <hr>
 
-            <div class="row">
-                <!-- linke Spalte -->
-                <div class="col-md-3">
-                    <a class='btn btn-primary btn-xs' href="{{ path('Stellenangebote_erstellen') }}"><span class="glyphicon glyphicon-pencil"></span> Stellenangebot anlegen</a>
-                </div>
-            </div>
             <table class="table table-striped table-hover">
                 <thead>
                 <tr>
@@ -39,8 +29,7 @@
                         <td> {{ stellenangebote.besetzungszeitpunkt|date('Y-m-d') }}</td>
                         <td>
                             <a class='btn btn-success btn-xs' href="{{ path('Stellenangebote_details', { 'id' : stellenangebote.id }) }}"><span class="glyphicon glyphicon-search"></span> Details</a>
-                            <a class='btn btn-info btn-xs' href="{{ path('Stellenangebote_bearbeiten', { 'id' : stellenangebote.id }) }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
-                            <a href="{{ path('Stellenangebote_löschen', { 'id' : stellenangebote.id }) }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Löschen</a>
+                            <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Bewerben</a>
                         </td>
                     </tr>
                 {% endfor %}
