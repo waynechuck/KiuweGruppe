@@ -17,6 +17,21 @@ class WebseitenController extends Controller
         return $this->render('webseite/startseite.html.twig');
     }
 
+    public function konzeptAction()
+    {
+        return $this->render('webseite/konzept.html.twig');
+    }
+
+    public function leitbildAction()
+    {
+        return $this->render('webseite/leitbild.html.twig');
+    }
+
+    public function kitaAction()
+    {
+        return $this->render('webseite/kita.html.twig');
+    }
+
     public function kontaktAction()
     {
         return $this->render('webseite/kontakt.html.twig');

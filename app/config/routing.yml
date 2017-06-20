@@ -8,6 +8,18 @@ Startseite:
     path:     /
     defaults: { _controller: AppBundle:Webseiten:startseite }
 
+Konzept:
+    path:     /konzept
+    defaults: { _controller: AppBundle:Webseiten:konzept }
+
+Leitbild:
+    path:     /leitbild
+    defaults: { _controller: AppBundle:Webseiten:leitbild }
+
+Kita:
+    path:     /kita
+    defaults: { _controller: AppBundle:Webseiten:kita }
+
 Kontakt:
     path:     /kontakt
     defaults: { _controller: AppBundle:Webseiten:kontakt }
