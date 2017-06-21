@@ -4,8 +4,12 @@ app:
 
 # Frontend der Anwendung im WebseitenController definiert!
 
-Startseite:
+Start:
     path:     /
+    defaults: { _controller: AppBundle:Webseiten:start }
+
+Startseite:
+    path:     /startseite
     defaults: { _controller: AppBundle:Webseiten:startseite }
 
 Konzept:

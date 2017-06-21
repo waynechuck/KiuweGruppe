@@ -12,6 +12,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class WebseitenController extends Controller
 {
+    public function startAction()
+    {
+        return $this->render('webseite/start.html.twig');
+    }
+
     public function startseiteAction()
     {
         return $this->render('webseite/startseite.html.twig');
