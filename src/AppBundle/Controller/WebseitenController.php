@@ -37,6 +37,11 @@ class WebseitenController extends Controller
         return $this->render('webseite/kita.html.twig');
     }
 
+    public function teamAction()
+    {
+        return $this->render('webseite/team.html.twig');
+    }
+
     public function kontaktAction()
     {
         return $this->render('webseite/kontakt.html.twig');

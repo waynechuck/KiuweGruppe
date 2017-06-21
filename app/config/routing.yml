@@ -20,6 +20,10 @@ Leitbild:
     path:     /leitbild
     defaults: { _controller: AppBundle:Webseiten:leitbild }
 
+Team:
+    path:     /team
+    defaults: { _controller: AppBundle:Webseiten:team }
+
 Kita:
     path:     /kita
     defaults: { _controller: AppBundle:Webseiten:kita }
