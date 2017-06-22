@@ -27,7 +27,7 @@
 
     <div class="masthead">
 
-        <h3 class="text-muted">Little Chicken </h3>
+        <h3 class="text-muted">Kiuwe gGmbH </h3>
 
         <nav class="navbar navbar-inverse">
             <div class="container">
@@ -40,12 +40,22 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="{{ path('Startseite') }}">Little Chicken UG</a>
+                    <a class="navbar-brand" href="{{ path('Startseite') }}">Kiuwe gGmbH</a>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                         <ul class="nav navbar-nav navbar-left">
                             <li><a href="{{ path('Leitbild') }}">Leitbild</a></li>
                             <li><a href="{{ path('Konzept') }}">Konzept</a></li>
-                            <li><a href="{{ path('Kita') }}"><span class="glyphicon glyphicon-home"></span> Unsere Kitas</a></li>
+                            <!-- Dropdown Unsere Kita -->
+                            <li class="Unsere Kitas">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-home"></span> Unsere Kitas</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ path('Kita') }}"> Übersicht</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Kita 1</a></li>
+                                    <li><a href="#">Kita 2</a></li>
+                                    <li><a href="#">Kita 3</a></li>
+                                </ul>
+                            </li> <!-- Dropdown Ende -->
                             <li><a href="{{ path('Team') }}"><span class="glyphicon glyphicon-user"></span> Team</a></li>
                         </ul>
 
@@ -68,7 +78,7 @@
         {% endblock %}
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-success">
         <div class="panel-body">
             <!-- footer start -->
             <div class="row">
