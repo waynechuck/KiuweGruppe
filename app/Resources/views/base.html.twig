@@ -8,7 +8,7 @@
     <meta name="description" content="Basis-Webseiten HTML-Datei">
     <meta name="author" content="Michael Trotzer">
 
-    <title>{% block title %}Little Chicken UG{% endblock %}</title>
+    <title>{% block title %}Kiuwe gGmbh{% endblock %}</title>
 
     {% block stylesheets %}
         <!-- Bootstrap core CSS CND -->
@@ -28,7 +28,7 @@
 
     <div class="masthead">
 
-        <h3 class="text-muted">Kiuwe gGmbH </h3>
+        <center><h3 class="text-muted"><span class="glyphicon glyphicon-globe"></span> Kinder und ihre Welt <span class="glyphicon glyphicon-globe"></span> </h3></center>
 
         <nav class="navbar navbar-inverse">
             <div class="container">
@@ -48,7 +48,7 @@
                             <li><a href="{{ path('Konzept') }}">Konzept</a></li>
                             <!-- Dropdown Unsere Kita -->
                             <li class="Unsere Kitas">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-home"></span> Unsere Kitas</a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Unsere Kitas</a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ path('Kita') }}"> Übersicht</a></li>
                                     <li class="divider"></li>
@@ -57,7 +57,7 @@
                                     <li><a href="#">Kita 3</a></li>
                                 </ul>
                             </li> <!-- Dropdown Ende -->
-                            <li><a href="{{ path('Team') }}"><span class="glyphicon glyphicon-user"></span> Team</a></li>
+                            <li><a href="{{ path('Team') }}"> Team</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
@@ -108,7 +108,6 @@
                 <!-- Footer rechte Spalte -->
                 <div class="col-md-4">
                     <h3> Informationen </h3>
-                    <p><a href="{{ path('AGB') }}">AGB´s</a></p>
                     <p><a href="{{ path('Karriere') }}">Karriere</a></p>
                     <p><a href="{{ path('Impressum') }}">Impressum</a></p>
                     <p><a href="{{ path('Kontakt') }}">Kontakt</a></p></p>

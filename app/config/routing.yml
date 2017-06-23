@@ -42,10 +42,6 @@ Karriere:
     path:     /karriere
     defaults: { _controller: AppBundle:Webseiten:karriere}
 
-AGB:
-    path:     /agb
-    defaults: { _controller: AppBundle:Webseiten:agb}
-
 Impressum:
     path:     /impressum
     defaults: { _controller: AppBundle:Webseiten:impressum}

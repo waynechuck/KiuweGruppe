@@ -57,11 +57,6 @@ class WebseitenController extends Controller
         return $this->render('webseite/dashboard.html.twig');
     }
 
-    public function agbAction()
-    {
-        return $this->render('webseite/agb.html.twig');
-    }
-
     public function impressumAction()
     {
         return $this->render('webseite/impressum.html.twig');
