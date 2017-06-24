@@ -62,9 +62,14 @@ class WebseitenController extends Controller
         return $this->render('webseite/impressum.html.twig');
     }
 
-    public function karriereAction()
+    public function anzeigenfrontendAction()
     {
-        return $this->render('webseite/karriere.html.twig');
-    }
+        $stellenangebote = $this->getDoctrine()
+            ->getRepository('AppBundle:Stellenangebote')
+            ->findAll();
 
+        return $this->render('stellenangebote/anzeigenfrontend.html.twig', [
+            'stellenangebote' => $stellenangebote
+        ]);
+    }
 }

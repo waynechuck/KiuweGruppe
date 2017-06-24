@@ -7,66 +7,53 @@
 {% block body %}
 
     <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Das Team </h3>
+            </div>
 
-    <div class="row">
+            <hr>
 
-        <div class="col-md-3">
-            <div class="thumbnail">
-                <img class="img-rounded" src="{{ asset('images/Jorg.jpg') }}" alt="Jörg Rohde"/>
+            <div class="col-md-3">
+                <img class="img-rounded" src="{{ asset('images/Jorg.jpg') }}" alt="Jörg Rohde" width="200" height="320"/>
+            </div>
+
+            <div class="col-md-3">
+                <div class="caption">
+                    <h3>Jörg Rohde</h3>
+                    <p> Diplom</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <img class="img-rounded" src="{{ asset('images/Svenja.jpg') }}" alt="Svenja Rohde" width="200" height="320"/>
+            </div>
+
+            <div class="col-md-3">
+                <div class="caption">
+                    <h3>Svenja Rohde</h3>
+                    <p> Bachelor of Sciene Grundschuldpädagogik</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <div class="caption">
-                <h3>Jörg Rohde</h3>
-                <p> Diplom</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-3">
+                <img class="img-rounded" src="{{ asset('images/Michael.jpg') }}" alt="Michael Trotzer" width="200" height="320"/>
             </div>
-        </div>
 
-        <div class="col-md-3">
-            <div class="thumbnail">
-                <img class="img-rounded" src="{{ asset('images/Svenja.jpg') }}" alt="Svenja Rohde"/>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="caption">
-                <h3>Svenja Rohde</h3>
-                <p> Bachelor of Sciene Grundschuldpädagogik</p>
-
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            <div class="col-md-3">
+                <div class="caption">
+                    <h3>Michael Trotzer</h3>
+                    <p> Master of Sciene Projektmanagement</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home"> Button</a></p>
+                </div>
             </div>
         </div>
     </div>
-
-    <hr>
-
-    <div class="row">
-
-        <div class="col-md-3">
-            <div class="thumbnail">
-                <img class="img-rounded" src="{{ asset('images/Michael.jpg') }}" alt="Michael Trotzer"/>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="caption">
-                <h3>Michael Trotzer</h3>
-                <p> Master of Sciene Projektmanagement</p>
-                icon-xing
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home"> Button</a></p>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-        </div>
-
-        <div class="col-md-3">
-        </div>
-    </div>
-    </div>
-
-
 
 {% endblock %}

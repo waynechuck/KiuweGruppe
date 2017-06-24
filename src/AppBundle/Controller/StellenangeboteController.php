@@ -34,17 +34,6 @@ class StellenangeboteController extends Controller
         ]);
     }
 
-    public function anzeigenfrontendAction()
-    {
-        $stellenangebote = $this->getDoctrine()
-            ->getRepository('AppBundle:Stellenangebote')
-            ->findAll();
-
-        return $this->render('stellenangebote/anzeigenfrontend.html.twig', [
-            'stellenangebote' => $stellenangebote
-        ]);
-    }
-
     public function erstellenAction(Request $request)
     {
         $stellenangebote = new stellenangebote;
@@ -245,6 +234,15 @@ class StellenangeboteController extends Controller
         return $this->redirectToRoute('Stellenangebote_anzeigen');
     }
 
+    public function karriereAction()
+    {
+        $stellenangebote = $this->getDoctrine()
+            ->getRepository('AppBundle:Stellenangebote')
+            ->findAll();
 
+        return $this->render('webseite/karriere.html.twig', [
+            'stellenangebote' => $stellenangebote
+        ]);
+    }
 
 }

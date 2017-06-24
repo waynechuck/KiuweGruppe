@@ -28,23 +28,23 @@ Kita:
     path:     /kita
     defaults: { _controller: AppBundle:Webseiten:kita }
 
-Kontakt:
-    path:     /kontakt
-    defaults: { _controller: AppBundle:Webseiten:kontakt }
-
 Anmelden:
     path:     /anmelden
     defaults: { _controller: AppBundle:Webseiten:anmelden }
 
 # Unterseiten im Footer
 
-Karriere:
-    path:     /karriere
-    defaults: { _controller: AppBundle:Webseiten:karriere}
-
 Impressum:
     path:     /impressum
     defaults: { _controller: AppBundle:Webseiten:impressum}
+
+Kontakt:
+    path:     /kontakt
+    defaults: { _controller: AppBundle:Webseiten:kontakt }
+
+Karriere:
+    path:     /karriere
+    defaults: { _controller: AppBundle:Stellenangebote:karriere}
 
 # Stellenangebote im Dashboard bei Mitarbeiter
 
@@ -63,11 +63,6 @@ Stellenangebote_bearbeiten:
 Stellenangebote_details:
     path:     /dashboard/stellenangebot/details/{id}
     defaults: { _controller: AppBundle:Stellenangebote:details }
-
-Stellenangebote_anzeigenfrontend:
-    path:     /karriere/stellenangebote
-    defaults: { _controller: AppBundle:Stellenangebote:anzeigenfrontend }
-
 
 Stellenangebote_löschen:
     path:     /dashboard/stellenangebot/löschen/{id}
