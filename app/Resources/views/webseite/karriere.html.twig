@@ -49,7 +49,7 @@
                     </div>
                 </div>
 
-                <div class="panel panel-success">
+                <div class="panel panel-info">
 
                     <div class="panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">
@@ -104,30 +104,84 @@
 
                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                         <div class="panel-body">
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Jobbezeichnung</th>
-                                        <th>Arbeitsort</th>
-                                        <th>Erstelldatum</th>
-                                        <th>Besetzungszeitpunkt</th>
-                                        <th>Aktionsmöglichkeiten</th>
-                                    </tr>
-                                </thead>
-                                {% for stellenangebote in stellenangebote %}
-                                    <tr>
-                                        <th scope="row"> {{ stellenangebote.id }} </th>
-                                        <td> {{ stellenangebote.jobbezeichnung }} </td>
-                                        <td> {{ stellenangebote.arbeitsort}} </td>
-                                        <td> {{ stellenangebote.erstelldatum|date('Y-m-d') }}</td>
-                                        <td> {{ stellenangebote.besetzungszeitpunkt|date('Y-m-d') }}</td>
-                                        <td>
-                                            <a class='btn btn-success btn-xs' href="{{ path('Stellenangebote_details', { 'id' : stellenangebote.id }) }}"><span class="glyphicon glyphicon-search"></span> Details</a>
-                                            <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Bewerben</a>
-                                        </td>
-                                    </tr>
+
+                            Hier finden Sie unsere aktuellen Stellenangebote, viel Spaß bei dem durchstöbern!
+                            <br>
+
+                            {% for stellenangebote in stellenangebote %}
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-info">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        <left>
+                                                            <strong> Ausgeschrieben Stelle: </strong> <span class="glyphicon glyphicon-edit"></span> {{ stellenangebote.jobbezeichnung }}
+                                                        </left>
+                                                    </h3>
+                                                </div>
+
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <span class="glyphicon glyphicon-edit"></span> Jobbezeichnung: <br>
+                                                            <span class="glyphicon glyphicon-search"></span>Identifikationsnummer: <br>
+                                                            <span class="glyphicon glyphicon-hourglass"></span> Erstelldatum: <br>
+                                                            <span class="glyphicon glyphicon-map-marker"></span> Arbeitsort: <br>
+                                                            <span class="glyphicon glyphicon-education"></span> Joblevel: <br>
+                                                            <span class="glyphicon glyphicon-user"></span> Berufszweig: <br>
+                                                            <span class="glyphicon glyphicon-calendar"></span> Zeitpunkt der Stellenbesetzung: <br>
+
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <strong> {{ stellenangebote.jobbezeichnung }}</strong> <br>
+                                                            <strong> {{ stellenangebote.id }}</strong> <br>
+                                                            <strong> {{ stellenangebote.erstelldatum|date('d.m.Y') }}</strong> <br>
+                                                            <strong> {{ stellenangebote.arbeitsort }}</strong> <br>
+                                                            <strong> {{ stellenangebote.joblevel }}</strong> <br>
+                                                            <strong> {{ stellenangebote.zweig }}</strong> <br>
+                                                            <strong> {{ stellenangebote.besetzungszeitpunkt|date('d.m.Y') }}</strong>  <br>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <span class="glyphicon glyphicon-heart"></span> Arbeitsumfeld: <strong> {{ stellenangebote.arbeitsumfeld  }}</strong> <br> <br>
+
+                                                            <span class="glyphicon glyphicon-list-alt"></span> Aufgabenbeschreibung: <strong>  {{ stellenangebote.aufgaben }}</strong>
+                                                            <br>
+                                                            <br>
+                                                            <right>
+                                                                <button {{ path('Stellenangebote_details', { 'id' : stellenangebote.id }) }} type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">
+                                                                    <span class="glyphicon glyphicon-edit"></span> Bewerben</a>
+                                                                </button>
+                                                            </right>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 {% endfor %}
+
+                              <!-- Modal -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Bewerbungsformular zum Ausfüllen</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                Jetzt zeigt er ja immer das gleiche an oder?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+                                                <button type="button" class="btn btn-success">Bewerben</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </table>
                         </div>
                     </div>
