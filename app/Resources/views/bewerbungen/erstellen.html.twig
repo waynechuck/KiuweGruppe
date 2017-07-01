@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="jumbotron">
+
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3> Persönliche Daten </h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- linke Spalte -->
+            <div class="col-md-6">
+                <div>
+
+                    {{ form_label(form.anrede) }}
+                    {{ form_errors(form.anrede) }}
+                    {{ form_widget(form.anrede) }}
+
+                    {{ form_label(form.vorname) }}
+                    {{ form_errors(form.vorname) }}
+                    {{ form_widget(form.vorname) }}
+
+                    {{ form_label(form.nachname) }}
+                    {{ form_errors(form.nachname) }}
+                    {{ form_widget(form.nachname) }}
+
+                    {{ form_label(form.strasse) }}
+                    {{ form_errors(form.strasse) }}
+                    {{ form_widget(form.strasse) }}
+
+                    {{ form_label(form.hausnummer) }}
+                    {{ form_errors(form.hausnummer) }}
+                    {{ form_widget(form.hausnummer) }}
+
+                </div>
+            </div>
+            <!-- rechte Spalte -->
+            <div class="col-md-6">
+                <div>
+
+                    {{ form_label(form.postleitzahl) }}
+                    {{ form_errors(form.postleitzahl) }}
+                    {{ form_widget(form.postleitzahl) }}
+
+                    {{ form_label(form.wohnort) }}
+                    {{ form_errors(form.wohnort) }}
+                    {{ form_widget(form.wohnort) }}
+
+                    {{ form_label(form.telefonPrivat) }}
+                    {{ form_errors(form.telefonPrivat) }}
+                    {{ form_widget(form.telefonPrivat) }}
+
+                    {{ form_label(form.telefonMobil) }}
+                    {{ form_errors(form.telefonMobil) }}
+                    {{ form_widget(form.telefonMobil) }}
+
+                    {{ form_label(form.email) }}
+                    {{ form_errors(form.email) }}
+                    {{ form_widget(form.email) }}
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h3> Lebenslauf </h3>
+                {{ form_label(form.lebenslauf) }}
+                {{ form_errors(form.lebenslauf) }}
+                {{ form_widget(form.lebenslauf) }}
+            </div>
+            <div class="col-md-4">
+                <h3> Anschreiben </h3>
+                {{ form_label(form.bewerbungsschreiben) }}
+                {{ form_errors(form.bewerbungsschreiben) }}
+                {{ form_widget(form.bewerbungsschreiben) }}
+
+            </div>
+            <div class="col-md-4">
+                <h3> weitere Dokumente </h3>
+                {{ form_label(form.weitereDokumente) }}
+                {{ form_errors(form.weitereDokumente) }}
+                {{ form_widget(form.weitereDokumente) }}
+            </div>
+        </div>
+
+        {{ form_widget(form.save) }}
+        {{ form_end(form) }}
+
+    </div>
+{% endblock %}

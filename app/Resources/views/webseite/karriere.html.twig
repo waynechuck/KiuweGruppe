@@ -97,7 +97,7 @@
                     <div class="panel-heading" role="tab" id="headingThree">
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Aktuelle Stellenangebote
+                                Karrierechancen bei der Kiuwe gGmbH
                             </a>
                         </h4>
                     </div>
@@ -105,7 +105,8 @@
                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                         <div class="panel-body">
 
-                            Hier finden Sie unsere aktuellen Stellenangebote, viel Spaß bei dem durchstöbern!
+                            Willkommen auf der Karriereseite der Kiuwe gGmbH, aktuelle Stellenangebote finden Sie hier,
+                            viel Spaß bei dem durchstöbern!
                             <br>
 
                             {% for stellenangebote in stellenangebote %}
@@ -114,46 +115,62 @@
                                         <div class="col-md-12">
                                             <div class="panel panel-info">
                                                 <div class="panel-heading">
-                                                    <h3 class="panel-title">
-                                                        <left>
-                                                            <strong> Ausgeschrieben Stelle: </strong> <span class="glyphicon glyphicon-edit"></span> {{ stellenangebote.jobbezeichnung }}
-                                                        </left>
-                                                    </h3>
+                                                        <small>
+                                                            <span class="glyphicon glyphicon-edit"></span> {{ stellenangebote.jobbezeichnung }}
+                                                        </small>
+
                                                 </div>
 
                                                 <div class="panel-body">
                                                     <div class="row">
-                                                        <div class="col-md-4">
+                                                        <div class="col-md-3">
                                                             <span class="glyphicon glyphicon-edit"></span> Jobbezeichnung: <br>
-                                                            <span class="glyphicon glyphicon-search"></span>Identifikationsnummer: <br>
+                                                            <span class="glyphicon glyphicon-search"></span> Identifikationsnummer: <br>
                                                             <span class="glyphicon glyphicon-hourglass"></span> Erstelldatum: <br>
                                                             <span class="glyphicon glyphicon-map-marker"></span> Arbeitsort: <br>
                                                             <span class="glyphicon glyphicon-education"></span> Joblevel: <br>
                                                             <span class="glyphicon glyphicon-user"></span> Berufszweig: <br>
-                                                            <span class="glyphicon glyphicon-calendar"></span> Zeitpunkt der Stellenbesetzung: <br>
+                                                            <span class="glyphicon glyphicon-calendar"></span> Stellenbesetzungszeitpunkt: <br>
+                                                            <br>
+                                                            <br>
 
                                                         </div>
-                                                        <div class="col-md-2">
+                                                        <div class="col-md-3">
                                                             <strong> {{ stellenangebote.jobbezeichnung }}</strong> <br>
                                                             <strong> {{ stellenangebote.id }}</strong> <br>
                                                             <strong> {{ stellenangebote.erstelldatum|date('d.m.Y') }}</strong> <br>
                                                             <strong> {{ stellenangebote.arbeitsort }}</strong> <br>
                                                             <strong> {{ stellenangebote.joblevel }}</strong> <br>
-                                                            <strong> {{ stellenangebote.zweig }}</strong> <br>
+                                                            <strong> {{ stellenangebote.berufszweig }}</strong> <br>
                                                             <strong> {{ stellenangebote.besetzungszeitpunkt|date('d.m.Y') }}</strong>  <br>
                                                         </div>
 
                                                         <div class="col-md-6">
-                                                            <span class="glyphicon glyphicon-heart"></span> Arbeitsumfeld: <strong> {{ stellenangebote.arbeitsumfeld  }}</strong> <br> <br>
-
-                                                            <span class="glyphicon glyphicon-list-alt"></span> Aufgabenbeschreibung: <strong>  {{ stellenangebote.aufgaben }}</strong>
+                                                            Haben Sie noch Fragen zu diesen Stellenangebot? <br>
+                                                            <strong> Ansprechnpartner:</strong> {{ stellenangebote.ansprechpartner  }}<br>
+                                                            <strong> Telefonnummer: </strong> {{ stellenangebote.telefonnummer  }} <br>
                                                             <br>
                                                             <br>
-                                                            <right>
-                                                                <button {{ path('Stellenangebote_details', { 'id' : stellenangebote.id }) }} type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">
-                                                                    <span class="glyphicon glyphicon-edit"></span> Bewerben</a>
+                                                                <button {{ path('Stellenangebote_details', { 'id' : stellenangebote.id }) }} type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                                                                    <span class="glyphicon glyphicon-edit"></span> Hier können Sie sich bewerben</a>
                                                                 </button>
-                                                            </right>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div style="text-align:justify;">
+                                                                <span class="glyphicon glyphicon-heart"></span> Arbeitsumfeld: <strong> <br>
+                                                                    {{ stellenangebote.arbeitsumfeld  }}</strong>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div style="text-align:justify;">
+                                                                <span class="glyphicon glyphicon-list-alt"></span> Aufgabenbeschreibung: <strong> <br>
+                                                                    {{ stellenangebote.aufgaben }}</strong>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -162,27 +179,50 @@
                                     </div>
 
                                 {% endfor %}
+                            <br>
+                            <br>
+                            Keine passende Stelle gefunden aber trotzdem interessiert? Dann schreiben Sie doch einfach eine
+                            Initiativbewerbung! Klicken Sie doch einfach hier:
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                              <!-- Modal -->
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                <h4 class="modal-title" id="myModalLabel">Bewerbungsformular zum Ausfüllen</h4>
-                                            </div>
-                                            <div class="modal-body">
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Hier geht es zum Bewerbungsformular</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div style="text-align:justify;">
+                            Sehr geehrte Bewerberin, <br>
+                            Sehr geehrter Bewerber <br>
+                            <br>
 
-                                                Jetzt zeigt er ja immer das gleiche an oder?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-                                                <button type="button" class="btn btn-success">Bewerben</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </table>
+                            Vielen Dank dass sie Sich dazu entschieden haben, am Bewerbungsprozess der
+                            Kiuwe gGmbH teilzunehmen!Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                            ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+                            Hier folgen ein paar Informationen zu der Bewerbungsstruktur! <br><br>
+
+                            1. Bitte senden Sie uns Ihren Lebenslauf zu <br>
+                            2. Bitte senden Sie uns Ihre Zeugnisse zu <br>
+                            3. Bitte formulieren Sie ein personalisertes Anschreiben. <br>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+                            <a href="{{ path('Bewerbung_erstellen') }}" class="btn btn-success">Bewerben</a>
                         </div>
                     </div>
                 </div>

@@ -7,14 +7,14 @@
     </div>
 
     <div class="jumbotron">
-        <a href="{{ path('Mitarbeiter_anzeigen') }}" class="btn btn-primary">zurück zur Mitarbeiterübersicht</a>
+        <a href="{{ path('Mitarbeiter_anzeigen') }}" class="btn btn-primary">zurück zur Übersicht</a>
 
         {{ form_start(form) }}
         {{ form_errors(form) }}
 
         <div class="row">
             <div class="col-md-12">
-                <h3> Persönliche Daten: </h3>
+                <h3> Hier ist es möglich ein neues Stellenangebot auszuschreiben: </h3>
             </div>
         </div>
 
@@ -31,25 +31,23 @@
                     {{ form_errors(form.arbeitsort) }}
                     {{ form_widget(form.arbeitsort) }}
 
-                    {{ form_label(form.zweig) }}
-                    {{ form_errors(form.zweig) }}
-                    {{ form_widget(form.zweig) }}
+                    {{ form_label(form.berufszweig) }}
+                    {{ form_errors(form.berufszweig) }}
+                    {{ form_widget(form.berufszweig) }}
+
+                    {{ form_label(form.joblevel) }}
+                    {{ form_errors(form.joblevel) }}
+                    {{ form_widget(form.joblevel) }}
 
                     {{ form_label(form.arbeitsumfeld) }}
                     {{ form_errors(form.arbeitsumfeld) }}
                     {{ form_widget(form.arbeitsumfeld) }}
+
                 </div>
             </div>
             <!-- rechte Spalte -->
             <div class="col-md-6">
                 <div>
-                    {{ form_label(form.aufgaben) }}
-                    {{ form_errors(form.aufgaben) }}
-                    {{ form_widget(form.aufgaben) }}
-
-                    {{ form_label(form.joblevel) }}
-                    {{ form_errors(form.joblevel) }}
-                    {{ form_widget(form.joblevel) }}
 
                     {{ form_label(form.erstelldatum) }}
                     {{ form_errors(form.erstelldatum) }}
@@ -58,6 +56,16 @@
                     {{ form_label(form.besetzungszeitpunkt) }}
                     {{ form_errors(form.besetzungszeitpunkt) }}
                     {{ form_widget(form.besetzungszeitpunkt) }}
+
+                    {{ form_row (form.ansprechpartner) }}
+
+                    {{ form_label(form.telefonnummer) }}
+                    {{ form_errors(form.telefonnummer) }}
+                    {{ form_widget(form.telefonnummer) }}
+
+                    {{ form_label(form.aufgaben) }}
+                    {{ form_errors(form.aufgaben) }}
+                    {{ form_widget(form.aufgaben) }}
 
                 </div>
             </div>

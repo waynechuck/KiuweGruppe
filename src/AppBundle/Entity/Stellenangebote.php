@@ -38,9 +38,9 @@ class Stellenangebote
     /**
      * @var string
      *
-     * @ORM\Column(name="Zweig", type="string", length=255)
+     * @ORM\Column(name="Berufszweig", type="string", length=255)
      */
-    private $zweig;
+    private $berufszweig;
 
     /**
      * @var string
@@ -76,6 +76,21 @@ class Stellenangebote
      * @ORM\Column(name="Aufgaben", type="text")
      */
     private $aufgaben;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Ansprechpartner", type="string", length=255)
+     */
+    private $ansprechpartner;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="Telefonnummer", type="integer")
+     */
+    private $telefonnummer;
+
 
 
     /**
@@ -137,27 +152,27 @@ class Stellenangebote
     }
 
     /**
-     * Set zweig
+     * Set berufszweig
      *
-     * @param string $zweig
+     * @param string $berufszweig
      *
      * @return Stellenangebote
      */
-    public function setZweig($zweig)
+    public function setBerufszweig($berufszweig)
     {
-        $this->zweig = $zweig;
+        $this->berufszweig = $berufszweig;
 
         return $this;
     }
 
     /**
-     * Get zweig
+     * Get berufszweig
      *
      * @return string
      */
-    public function getZweig()
+    public function getBerufszweig()
     {
-        return $this->zweig;
+        return $this->berufszweig;
     }
 
     /**
@@ -278,6 +293,54 @@ class Stellenangebote
     public function getAufgaben()
     {
         return $this->aufgaben;
+    }
+
+    /**
+     * Set ansprechpartner
+     *
+     * @param string $ansprechpartner
+     *
+     * @return Ansprechpartner
+     */
+    public function setAnsprechpartner($ansprechpartner)
+    {
+        $this->ansprechpartner = $ansprechpartner;
+
+        return $this;
+    }
+
+    /**
+     * Get ansprechpartner
+     *
+     * @return string
+     */
+    public function getAnsprechpartner()
+    {
+        return $this->ansprechpartner;
+    }
+
+    /**
+     * Set telefonnummer
+     *
+     * @param integer $telefonnummer
+     *
+     * @return Telefonnummer
+     */
+    public function setTelefonnummer($telefonnummer)
+    {
+        $this->telefonnummer = $telefonnummer;
+
+        return $this;
+    }
+
+    /**
+     * Get telefonnummer
+     *
+     * @return int
+     */
+    public function getTelefonnummer()
+    {
+        return $this->telefonnummer;
     }
 }
 

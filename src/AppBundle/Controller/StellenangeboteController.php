@@ -20,6 +20,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+
 
 class StellenangeboteController extends Controller
 {
@@ -42,33 +45,44 @@ class StellenangeboteController extends Controller
             //TextType:
             ->add('jobbezeichnung', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
             ->add('arbeitsort', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('zweig', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('arbeitsumfeld', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('aufgaben', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+            ->add('berufszweig', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+            ->add('arbeitsumfeld', TextareaType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+            ->add('aufgaben', TextareaType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
 
-           // ChoiceType
+            // ChoiceType
             ->add('joblevel', ChoiceType::class, ['choices' => [
-                'Anfänger' => 'Anfänger',
-                'Fortgeschritten' => 'Fortgeschritten',
-                'Alter Hase' => 'Alter Hase',
-                'geschieden' => 'geschieden',
-                'Ehe aufgehoben' => 'Ehe aufgehoben'],
+                'Praktikant' => 'Praktikant',
+                'Werkstudent' => 'Werkstudent',
+                'Auszubildende' => 'Auszubildende',
+                'Berufseinsteiger' => 'Berufseinsteiger',
+                'Berufserfahrung' => 'Berufserfahrung',
+                'operativer Management' => 'operativer Management',
+                'strategisches Management' => 'strategisches Management'],
+                'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+
+
+            ->add('ansprechpartner', ChoiceType::class, ['choices' => [
+                'Herr Jörg Rohde' => 'Herr Jörg Rohde',
+                'Frau Svenja Rohde' => 'Frau Svenja Rohde'],
                 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
 
             //DateType
             ->add('erstelldatum', DateType::class, [
                 'placeholder' => [
-                    'year' => 'Jahr',
+                    'day' => 'Tag',
                     'month' => 'Monat',
-                    'day' => 'Tag'],
+                    'year' => 'Jahr'],
                 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
 
             ->add('besetzungszeitpunkt', DateType::class, [
                 'placeholder' => [
-                    'year' => 'Jahr',
+                    'day' => 'Tag',
                     'month' => 'Monat',
-                    'day' => 'Tag'],
+                    'year' => 'Jahr'],
                 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+
+            //NumberType
+            ->add('telefonnummer', NumberType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
 
             // Bestätigungbutton um das Formular zu übernehmen
             ->add('save', SubmitType::class, ['label' => 'Erstelle Stellenangebot', 'attr' => ['class' => 'btn btn-primary', 'style' => 'margin-bottom:15px']])
@@ -81,22 +95,26 @@ class StellenangeboteController extends Controller
 
             $jobbezeichnung = $form['jobbezeichnung']->getData();
             $arbeitsort = $form['arbeitsort']->getData();
-            $zweig = $form['zweig']->getData();
+            $berufszweig = $form['berufszweig']->getData();
             $arbeitsumfeld = $form['arbeitsumfeld']->getData();
             $aufgaben = $form['aufgaben']->getData();
             $joblevel = $form['joblevel']->getData();
             $erstelldatum = $form['erstelldatum']->getData();
             $besetzungszeitpunkt = $form['besetzungszeitpunkt']->getData();
+            $telefonnummer = $form['telefonnummer']->getData();
+            $ansprechpartner = $form['ansprechpartner']->getData();
 
             //data
             $stellenangebote->setJobbezeichnung($jobbezeichnung);
             $stellenangebote->setArbeitsort($arbeitsort);
-            $stellenangebote->setZweig($zweig);
+            $stellenangebote->setBerufszweig($berufszweig);
             $stellenangebote->setArbeitsumfeld($arbeitsumfeld);
             $stellenangebote->setAufgaben($aufgaben);
             $stellenangebote->setJoblevel($joblevel);
             $stellenangebote->setErstelldatum($erstelldatum);
             $stellenangebote->setBesetzungszeitpunkt($besetzungszeitpunkt);
+            $stellenangebote->setTelefonnummer($telefonnummer);
+            $stellenangebote->setAnsprechpartner($ansprechpartner);
 
             $em = $this->getDoctrine()->getManager();
 
@@ -126,7 +144,7 @@ class StellenangeboteController extends Controller
         //data
         $stellenangebote->setJobbezeichnung($stellenangebote->getJobbezeichnung());
         $stellenangebote->setArbeitsort($stellenangebote->getArbeitsort());
-        $stellenangebote->setZweig($stellenangebote->getZweig());
+        $stellenangebote->setBerufszweig($stellenangebote->getBerufszweig());
         $stellenangebote->setArbeitsumfeld($stellenangebote->getArbeitsumfeld());
         $stellenangebote->setAufgaben($stellenangebote->getAufgaben());
         $stellenangebote->setJoblevel($stellenangebote->getJoblevel());
@@ -137,9 +155,9 @@ class StellenangeboteController extends Controller
             //TextType:
             ->add('jobbezeichnung', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
             ->add('arbeitsort', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('zweig', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('arbeitsumfeld', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('aufgaben', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+            ->add('berufszweig', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+            ->add('arbeitsumfeld', TextareaType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+            ->add('aufgaben', TextareaType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
             // ChoiceType
             ->add('joblevel', ChoiceType::class, ['choices' => [
                 'Anfänger' => 'Anfänger',
@@ -172,7 +190,7 @@ class StellenangeboteController extends Controller
 
             $jobbezeichnung = $form['jobbezeichnung']->getData();
             $arbeitsort = $form['arbeitsort']->getData();
-            $zweig = $form['zweig']->getData();
+            $berufszweig = $form['berufszweig']->getData();
             $arbeitsumfeld = $form['arbeitsumfeld']->getData();
             $aufgaben = $form['aufgaben']->getData();
             $joblevel = $form['joblevel']->getData();
@@ -185,7 +203,7 @@ class StellenangeboteController extends Controller
             //data
             $stellenangebote->setJobbezeichnung($jobbezeichnung);
             $stellenangebote->setArbeitsort($arbeitsort);
-            $stellenangebote->setZweig($zweig);
+            $stellenangebote->setBerufszweig($berufszweig);
             $stellenangebote->setArbeitsumfeld($arbeitsumfeld);
             $stellenangebote->setAufgaben($aufgaben);
             $stellenangebote->setJoblevel($joblevel);
@@ -243,6 +261,7 @@ class StellenangeboteController extends Controller
         return $this->render('webseite/karriere.html.twig', [
             'stellenangebote' => $stellenangebote
         ]);
+
     }
 
 }

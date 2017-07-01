@@ -40,11 +40,25 @@ Impressum:
 
 Kontakt:
     path:     /kontakt
-    defaults: { _controller: AppBundle:Webseiten:kontakt }
+    defaults: { _controller: AppBundle:Webseiten:kontakt}
 
 Karriere:
     path:     /karriere
     defaults: { _controller: AppBundle:Stellenangebote:karriere}
+
+# Bewerbungen im Dashboard bei Bewerbern
+
+Bewerbung_erstellen:
+    path:     /karriere/bewerbung
+    defaults: { _controller: AppBundle:Bewerbungen:erstellen}
+
+Bewerbung_anzeigen:
+    path:     /dashboard/bewerbungen
+    defaults: { _controller: AppBundle:Bewerbungen:anzeigen}
+
+Bewerbung_details:
+    path:     /dashboard/bewerbungen
+    defaults: { _controller: AppBundle:Bewerbungen:details}
 
 # Stellenangebote im Dashboard bei Mitarbeiter
 

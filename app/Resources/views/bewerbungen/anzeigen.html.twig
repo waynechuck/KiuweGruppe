@@ -1,0 +1,52 @@
+{% extends 'backend.html.twig' %}
+
+{% block body %}
+
+    <div class="panel-heading">
+        <a class='btn btn-primary btn-xs' href="{{ path('Dashboard') }}"><span class="glyphicon glyphicon-home"></span></a>
+    </div>
+
+    <div class="jumbotron">
+        <div class="row">
+                <h1 class="panel-title"><center>Übersicht der Bewerbungen</center></h1>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <!-- linke Spalte -->
+            <div class="col-md-3">
+                <a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-pencil"></span> Mitarbeiterprofil anlegen</a>
+            </div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Anrede</th>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Telefon Privat</th>
+                <th>Telefon Mobil</th>
+                <th>E-Mail-Adresse</th>
+                <th>Lebenslauf</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for bewerbungen in bewerbungen %}
+                <tr>
+                    <th scope="row"> {{ bewerbungen.id }} </th>
+                    <td> {{ bewerbungen.anrede }} </td>
+                    <td> {{ bewerbungen.vorname}} </td>
+                    <td> {{ bewerbungen.nachname }} </td>
+                    <td> {{ bewerbungen.telefonPrivat }} </td>
+                    <td> {{ bewerbungen.telefonMobil}} </td>
+                    <td> {{ bewerbungen.email }} </td>
+                    <td> {{ bewerbungen.lebenslauf}} </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
