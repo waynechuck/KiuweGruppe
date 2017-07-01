@@ -5,19 +5,18 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Todo
+ * ToDo
  *
- * @ORM\Table(name="todo")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\TodoRepository")
+ * @ORM\Table(name="ToDo")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ToDoRepository")
  */
-class Todo
+class ToDo
 {
     /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     //@TODO auto_increment ist evil aufm PK, nicht verwenden
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
@@ -80,7 +79,7 @@ class Todo
      *
      * @param string $name
      *
-     * @return Todo
+     * @return ToDo
      */
     public function setName($name)
     {
@@ -104,7 +103,7 @@ class Todo
      *
      * @param string $category
      *
-     * @return Todo
+     * @return ToDo
      */
     public function setCategory($category)
     {
@@ -128,7 +127,7 @@ class Todo
      *
      * @param string $description
      *
-     * @return Todo
+     * @return ToDo
      */
     public function setDescription($description)
     {
@@ -152,7 +151,7 @@ class Todo
      *
      * @param string $priority
      *
-     * @return Todo
+     * @return ToDo
      */
     public function setPriority($priority)
     {
@@ -176,7 +175,7 @@ class Todo
      *
      * @param \DateTime $dueDate
      *
-     * @return Todo
+     * @return ToDo
      */
     public function setDueDate($dueDate)
     {
@@ -200,7 +199,7 @@ class Todo
      *
      * @param \DateTime $createDate
      *
-     * @return Todo
+     * @return ToDo
      */
     public function setCreateDate($createDate)
     {

@@ -48,15 +48,15 @@ Karriere:
 
 # Bewerbungen im Dashboard bei Bewerbern
 
-Bewerbung_erstellen:
+Bewerbungen_erstellen:
     path:     /karriere/bewerbung
     defaults: { _controller: AppBundle:Bewerbungen:erstellen}
 
-Bewerbung_anzeigen:
+Bewerbungen_anzeigen:
     path:     /dashboard/bewerbungen
     defaults: { _controller: AppBundle:Bewerbungen:anzeigen}
 
-Bewerbung_details:
+Bewerbungen_details:
     path:     /dashboard/bewerbungen
     defaults: { _controller: AppBundle:Bewerbungen:details}
 
@@ -126,27 +126,27 @@ Mitarbeiter_löschen:
     path:     /dashboard/mitarbeiter/löschen/{id}
     defaults: { _controller: AppBundle:Mitarbeiter:löschen }
 
-# Todo
+# toDo
 
-Todos_anzeigen:
+ToDos_anzeigen:
     path:     /dashboard/todos
-    defaults: { _controller: AppBundle:Todo:anzeigen }
+    defaults: { _controller: AppBundle:ToDo:anzeigen }
 
-Todos_erstellen:
+ToDos_erstellen:
     path:     /dashboard/todos/erstellen
-    defaults: { _controller: AppBundle:Todo:erstellen }
+    defaults: { _controller: AppBundle:ToDo:erstellen }
 
-Todos_bearbeiten:
+ToDos_bearbeiten:
     path:     /dashboard/todos/bearbeiten/{id}
-    defaults: { _controller: AppBundle:Todo:bearbeiten }
+    defaults: { _controller: AppBundle:ToDo:bearbeiten }
 
-Todos_details:
+ToDos_details:
     path:     /dashboard/todos/details/{id}
-    defaults: { _controller: AppBundle:Todo:details }
+    defaults: { _controller: AppBundle:ToDo:details }
 
-Todos_löschen:
+ToDos_löschen:
     path:     /dashboard/todos/löschen/{id}
-    defaults: { _controller: AppBundle:Todo:löschen }
+    defaults: { _controller: AppBundle:ToDo:löschen }
 
 # Finanzen
 

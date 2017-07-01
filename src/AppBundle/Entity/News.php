@@ -42,7 +42,7 @@ class News
     //@TODO typo in word, entweder camelCase oder underscore_case (underscore_case ist besser für DB)
      * @ORM\Column(name="veroeffentlichungsdatum", type="datetimetz")
      */
-    //Todo typo in word..
+    //toDo typo in word..
     private $veroeffentlichungsdatum;
 
     /**

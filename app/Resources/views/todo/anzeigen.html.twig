@@ -7,9 +7,11 @@
     <div class="panel-heading">
         <h3 class="panel-title"><center>Übersicht der aktuelle ToDo´s</center></h3>
     </div>
-    <div class="jumbotron">
-        {#@TODO keine hartgecodeten URLS verwenden#}
-        <a class="btn btn-primary" href="/dashboard/todos/erstellen">Todo´s hinzufügen</a>
+
+    <div class="panel-body">
+        {% for ToDo in ToDo %}
+            <div class="jumbotron">
+        <a class="btn btn-primary" href="{{ path('ToDos_erstellen') }}">Todo´s hinzufügen</a>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -20,22 +22,23 @@
             </tr>
             </thead>
             <tbody>
-            {% for todo in todos %}
-                <tr>
-                    <th scope="row">{{ todo.id }}</th>
-                    <td>{{ todo.name }}</td>
-                    <td>{{ todo.dueDate|date('F j, Y, g:i a')}}</td>
-                    <td>
-                        {#@TODO keine hartgecodeten URLS verwenden#}
-                        <a class='btn btn-success btn-xs' href="/dashboard/todos/details/{{ todo.id }}"><span class="glyphicon glyphicon-search"></span> Details</a>
-                        {#@TODO keine hartgecodeten URLS verwenden#}
-                        <a class='btn btn-info btn-xs' href="/dashboard/todos/bearbeiten/{{ todo.id }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
-                        {#@TODO keine hartgecodeten URLS verwenden#}
-                        <a href="/dashboard/todos/löschen/{{ todo.id }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Löschen</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <th scope="row">{{ ToDo.id }}</th>
+                        <td>{{ ToDo.name }}</td>
+                        <td>{{ ToDo.dueDate|date('j F Y')}}</td>
+                        <td>
+                            {#@TODO keine hartgecodeten URLS verwenden#}
+                            <a class='btn btn-success btn-xs' href="/dashboard/todos/details/{{ ToDo.id }}"><span class="glyphicon glyphicon-search"></span> Details</a>
+                            {#@TODO keine hartgecodeten URLS verwenden#}
+                            <a class='btn btn-info btn-xs' href="/dashboard/todos/bearbeiten/{{ ToDo.id }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
+                            {#@TODO keine hartgecodeten URLS verwenden#}
+                            <a href="/dashboard/todos/löschen/{{ ToDo.id }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Löschen</a>
+                        </td>
+                    </tr>
+                </div>
             {% endfor %}
             </tbody>
         </table>
+    </div>
     </div>
 {% endblock %}
