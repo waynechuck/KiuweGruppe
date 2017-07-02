@@ -2,18 +2,61 @@
 
 {% block body %}
 
+
     <div class="panel-heading">
 
-        <h3 class="panel-title"><center>Todo bearbeiten</center></h3>
+        <h3 class="panel-title"><center>ToDo´s bearbeiten</center></h3>
     </div>
 
-    <div class="jumbotron">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-default btn-block btn-sm" href="{{ path('ToDos_anzeigen') }}">zurück zur Übersicht!</a>
+            </div>
+        </div>
 
-    <a class="btn btn-primary" href="/dashboard/todos">zurück zur Übersicht</a>
+    <hr>
 
-    <h2 class="page-header">Todo bearbeiten</h2>
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
 
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+
+                {{ form_label(form.name) }}
+                {{ form_errors(form.name) }}
+                {{ form_widget(form.name) }}
+
+                {{ form_label(form.category) }}
+                {{ form_errors(form.category) }}
+                {{ form_widget(form.category) }}
+
+                {{ form_label(form.priority) }}
+                {{ form_errors(form.priority) }}
+                {{ form_widget(form.priority) }}
+            </div>
+
+            <div class="col-md-6">
+                {{ form_label(form.description) }}
+                {{ form_errors(form.description) }}
+                {{ form_widget(form.description) }}
+
+                {{ form_label(form.dueDate) }}
+                {{ form_errors(form.dueDate) }}
+                {{ form_widget(form.dueDate) }}
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+    </div>
 {% endblock %}

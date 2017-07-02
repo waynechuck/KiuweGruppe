@@ -30,7 +30,9 @@
             <div class="container-fluid">
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="{{ path('Startseite') }}">Zur Webseite</a></li>
+                    <!-- Dashboard und Übersicht-Seite -->
                     <li><a href="{{ path('Dashboard') }}">Übersicht</a>
+                    <!-- ToDo´s -->
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ToDo´s <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -38,11 +40,7 @@
                             <li><a href="{{ path('ToDos_erstellen') }}"> ToDo´s erstellen</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ path('News_anzeigen') }}">News</a></li>
-                    <li><a href="{{ path('Finanzen_anzeigen') }}">Finanzen</a></li>
-                    <li><a href="{{ path('Kunden_anzeigen') }}">Kunden</a></li>
-                    <li><a href="{{ path('Projekt_anzeigen') }}">Projekte</a></li>
-                    <li><a href="{{ path('Wiki_anzeigen') }}">Wissensmanagement</a></li>
+                    <!-- Mitarbeiter -->
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mitarbeiter <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -51,6 +49,12 @@
                             <li><a href="{{ path('Bewerbungen_anzeigen') }}">Bewerbungen</a></li>
                         </ul>
                     </li>
+                    <li><a href="{{ path('News_anzeigen') }}">News</a></li>
+                    <li><a href="{{ path('Finanzen_anzeigen') }}">Finanzen</a></li>
+                    <li><a href="{{ path('Kunden_anzeigen') }}">Kunden</a></li>
+                    <li><a href="{{ path('Projekt_anzeigen') }}">Projekte</a></li>
+                    <li><a href="{{ path('Wiki_anzeigen') }}">Wissensmanagement</a></li>
+
                 </ul>
             </div>
         </div>

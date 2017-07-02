@@ -1,6 +1,6 @@
 {% extends 'backend.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Kiuwe gGmbH{% endblock %}
 
 {% block body %}
 
@@ -9,36 +9,71 @@
     </div>
 
     <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-success btn-block btn-sm" href="{{ path('ToDos_erstellen') }}">ToDo erstellen</a>
+            </div>
+        </div>
+        <hr>
+
+        {% for flashMessage in app.session.flashbag.get('erstellen') %}
+
+            <div class="alert alert-success">
+                {{ flashMessage }}
+            </div>
+
+        {% endfor %}
+
+        {% for flashMessage in app.session.flashbag.get('bearbeiten') %}
+
+            <div class="alert alert-info">
+                {{ flashMessage }}
+            </div>
+
+        {% endfor %}
+
+        {% for flashMessage in app.session.flashbag.get('löschen') %}
+
+            <div class="alert alert-danger">
+                {{ flashMessage }}
+            </div>
+
+        {% endfor %}
+
         {% for ToDo in ToDo %}
             <div class="jumbotron">
-        <a class="btn btn-primary" href="{{ path('ToDos_erstellen') }}">Todo´s hinzufügen</a>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID-Nummer</th>
-                <th>Name des ToDo`s</th>
-                <th>Deadline</th>
-                <th>Bearbeitungsmöglichkeiten</th>
-            </tr>
-            </thead>
-            <tbody>
-                    <tr>
-                        <th scope="row">{{ ToDo.id }}</th>
-                        <td>{{ ToDo.name }}</td>
-                        <td>{{ ToDo.dueDate|date('j F Y')}}</td>
-                        <td>
-                            {#@TODO keine hartgecodeten URLS verwenden#}
-                            <a class='btn btn-success btn-xs' href="/dashboard/todos/details/{{ ToDo.id }}"><span class="glyphicon glyphicon-search"></span> Details</a>
-                            {#@TODO keine hartgecodeten URLS verwenden#}
-                            <a class='btn btn-info btn-xs' href="/dashboard/todos/bearbeiten/{{ ToDo.id }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
-                            {#@TODO keine hartgecodeten URLS verwenden#}
-                            <a href="/dashboard/todos/löschen/{{ ToDo.id }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Löschen</a>
-                        </td>
-                    </tr>
+                <div class="row">
+                    <div class="col-md-3">
+                        <center><strong>Bearbeitungsmöglichkeiten</strong></center> <br>
+                        <a class='btn btn-info btn-block btn-xs' href="{{ path('ToDos_bearbeiten', { 'id' : ToDo.id }) }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
+                        <a class='btn btn-danger btn-block btn-xs' href="{{ path('ToDos_löschen', { 'id' : ToDo.id }) }}"><span class="glyphicon glyphicon-remove"></span> Löschen</a>
+                    </div>
+
+                    <div class="col-md-2">
+                        <strong>Identifikationsnummer: </strong><br>
+                        <strong>Name des ToDo`s: </strong><br>
+                        <strong>Deadline: </strong><br>
+                        <strong>Kategorie:</strong><br>
+                        <strong>Priorität:</strong><br>
+                    </div>
+
+                    <div class="col-md-2">
+                        {{ ToDo.id }} <br>
+                        {{ ToDo.name }} <br>
+                        {{ ToDo.dueDate|date('d. F Y')}}<br>
+                        {{ ToDo.category}} <br>
+                        {{ ToDo.priority}} <br>
+                    </div>
+
+                    <div class="col-md-5">
+                        <strong> Beschreibung:<br> </strong>
+                        <div style="text-align:justify;">
+                            {{ ToDo.description }}
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <hr>
             {% endfor %}
-            </tbody>
-        </table>
-    </div>
     </div>
 {% endblock %}

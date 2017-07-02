@@ -49,7 +49,7 @@ class ToDoController extends Controller
             ->add('description', TextareaType::class, ['label' => 'Beschreibung', 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
             ->add('priority', ChoiceType::class, ['label' => 'Priorität', 'choices' => ['Niedrig' => 'Niedrig', 'Normal' => 'Normal', 'Hoch' => 'Hoch'], 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
             ->add('dueDate', DateType::class, ['label' => 'Enddatum', 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
-            ->add('save', SubmitType::class, ['label' => 'ToDo hinzufügen', 'attr' => ['class' => 'btn btn-primary', 'style' =>'margin-bottom:15px']])
+            ->add('save', SubmitType::class, ['label' => 'ToDo erstellen', 'attr' => ['class' => 'btn btn-primary btn-block btn-sm', 'style' =>'margin-bottom:15px']])
             ->getForm();
 
         $form->handleRequest($request);
@@ -77,7 +77,7 @@ class ToDoController extends Controller
             $em->flush();
 
             $this->addFlash(
-                'notice',
+                'erstellen',
                 'ToDo wurde erfolgreich hinzugefügt!'
             );
 
@@ -105,12 +105,12 @@ class ToDoController extends Controller
             $ToDo->setCreateDate($now);
 
         $form =$this->createFormBuilder($ToDo)
-            ->add('name', TextType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
-            ->add('category', TextType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
-            ->add('description', TextareaType::class, ['attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
-            ->add('priority', ChoiceType::class, ['choices' => ['Low' => 'Low', 'Normal' => 'Normal', 'High' => 'High'], 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
-            ->add('dueDate', DateTimeType::class, ['attr' => ['class' => 'formcontrol', 'style' =>'margin-bottom:15px']])
-            ->add('save', SubmitType::class, ['label' => 'ToDo bearbeiten', 'attr' => ['class' => 'btn btn-primary', 'style' =>'margin-bottom:15px']])
+            ->add('name', TextType::class, ['label' => 'Name des ToDo´s', 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('category', TextType::class, ['label' => 'Kategorie', 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('description', TextareaType::class, ['label' => 'Beschreibung', 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('priority', ChoiceType::class, ['label' => 'Priorität', 'choices' => ['Niedrig' => 'Niedrig', 'Normal' => 'Normal', 'Hoch' => 'Hoch'], 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('dueDate', DateType::class, ['label' => 'Enddatum', 'attr' => ['class' => 'form-control', 'style' =>'margin-bottom:15px']])
+            ->add('save', SubmitType::class, ['label' => 'ToDo bearbeiten', 'attr' => ['class' => 'btn btn-info btn-block btn-sm', 'style' =>'margin-bottom:15px']])
             ->getForm();
 
         $form->handleRequest($request);
@@ -138,8 +138,8 @@ class ToDoController extends Controller
             $em->flush();
 
             $this->addFlash(
-                'notice',
-                'ToDo Updated'
+                'bearbeiten',
+                'ToDo wurde erfolgreich bearbeitet!'
             );
 
             return $this->redirectToRoute('ToDos_anzeigen');
@@ -171,8 +171,8 @@ class ToDoController extends Controller
         $em->flush();
 
         $this->addFlash(
-            'notice',
-            'ToDo Removed'
+            'löschen',
+            'ToDo wurde erfolgreich gelöscht!'
         );
         return $this->redirectToRoute('ToDos_anzeigen');
     }
