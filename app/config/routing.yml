@@ -28,10 +28,6 @@ Kita:
     path:     /kita
     defaults: { _controller: AppBundle:Webseiten:kita }
 
-Anmelden:
-    path:     /anmelden
-    defaults: { _controller: AppBundle:Webseiten:anmelden }
-
 # Unterseiten im Footer
 
 Impressum:
@@ -167,6 +163,11 @@ Kunden_anzeigen:
 Wiki_anzeigen:
     path:     /dashboard/wiki
     defaults: { _controller: AppBundle:Wiki:anzeigen}
+
+ # FOS User Bundle
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
 
 
