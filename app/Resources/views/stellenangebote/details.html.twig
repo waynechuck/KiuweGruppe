@@ -1,91 +1,46 @@
 {% extends 'backend.html.twig' %}
 
 {% block body %}
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title"><center>Stellenangebot</center></h3>
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-12">
+                <h3><center><strong> Detailanzeige des Stellenangebotes</strong></center></h3>
+            </div>
         </div>
+    </div>
 
-        <div class="jumbotron">
-            <a href="{{ path('#') }}" class="btn btn-primary">zurück zur Mitarbeiterübersicht</a>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3> Persönliche Daten: </h3>
+    <hr>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <a class='btn btn-primary btn-block btn-md' href="{{ path('Stellenangebote_anzeigen') }}"><span class="glyphicon glyphicon-arrow-left"></span> zurück zu den Stellenangeboten!</a>
                 </div>
             </div>
+        </div>
 
-            {% for stellenangebote in stellenangebote %}
+        <hr>
 
-            <div class="row">
+        <div class="row">
+            <div class="col-md-12">
                 <!-- linke Spalte -->
                 <div class="col-md-6">
                     <div>
-                        <li class="list-group-item">Vorname: {{ stellenangebot.vorname }}</li>
-                        <li class="list-group-item">Nachname: {{ mitarbeiter.nachname }}</li>
-                        <li class="list-group-item">Straße: {{ mitarbeiter.strasse }}</li>
-                        <li class="list-group-item">Hausnummer: {{ mitarbeiter.hausnummer }}</li>
-                        <li class="list-group-item">Postleitzahl: {{ mitarbeiter.postleitzahl }}</li>
-                        <li class="list-group-item">Ort: {{ mitarbeiter.ort }}</li>
+                        <li class="list-group-item">Jobbezeichnung: {{ stellenangebot.jobbezeichnung }}</li>
+                        <li class="list-group-item">Nachname: {{ stellenangebot.arbeitsort }}</li>
+                        <li class="list-group-item">Straße: {{ stellenangebot.berufszweig }}</li>
+                        <li class="list-group-item">Hausnummer: {{ stellenangebot.arbeitsumfeld }}</li>
+                        <li class="list-group-item">Postleitzahl: {{ stellenangebot.aufgaben }}</li>
+                        <li class="list-group-item">Ort: {{ stellenangebot.joblevel }}</li>
+                        <li class="list-group-item">Ort: {{ stellenangebot.erstelldatum|date('Y-m-d') }}</li>
+                        <li class="list-group-item">Ort: {{ stellenangebot.besetzungszeitpunkt|date('Y-m-d') }}</li>
                     </div>
-                </div>
-
-                <!-- rechte Spalte -->
-                <div class="col-md-6">
-                    <div>
-                        <li class="list-group-item">Personalausweißnummer: {{ mitarbeiter.personalausweissnummer }}</li>
-                        <li class="list-group-item">Nachname: {{ mitarbeiter.familienstand }}</li>
-                        <li class="list-group-item">Vorname: {{ mitarbeiter.geburtsdatum|date('Y-m-d') }}</li>
-                        <li class="list-group-item">Nachname: {{ mitarbeiter.geburtsort }}</li>
-                        <li class="list-group-item">Vorname: {{ mitarbeiter.telefon }}</li>
-                        <li class="list-group-item">Nachname: {{ mitarbeiter.email }}</li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <h3> Unternehmensdaten: </h3>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div>
-                        <li class="list-group-item">Vorname: {{ mitarbeiter.abteilung }}</li>
-                        <li class="list-group-item">Nachname: {{ mitarbeiter.position }}</li>
-                        <li class="list-group-item">Vorname: {{ mitarbeiter.einstellungsdatum|date('Y-m-d') }}</li>
-                        <li class="list-group-item">Nachname: {{ mitarbeiter.steuerklasse }}</li>
-                        <li class="list-group-item">Vorname: {{ mitarbeiter.steueridentifiktationsnummer }}</li>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div>
-                        <li class="list-group-item">Vorname: {{ mitarbeiter.bildungsabschluss }}</li>
-                        <li class="list-group-item">Nachname: {{ mitarbeiter.bruttoarbeitslohn }}</li>
-                        <li class="list-group-item">Vorname: {{ mitarbeiter.arbeitsstunden }}</li>
-                        <li class="list-group-item">Nachname: {{ mitarbeiter.krankenkasse }}</li>
-                        <li class="list-group-item">Vorname: {{ mitarbeiter.sozialversicherungsausweiss }}</li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <h3> Weitere Daten: </h3>
-                    <li class="list-group-item">Vorname: {{ mitarbeiter.bewerbung }}</li>
-                    <li class="list-group-item">Nachname: {{ mitarbeiter.arbeitszeugnis }}</li>
-                    <li class="list-group-item">Vorname: {{ mitarbeiter.foto }}</li>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 {% endblock %}
-
-
-
-
 
 
 

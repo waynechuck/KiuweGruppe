@@ -1,51 +1,86 @@
-    {% extends 'backend.html.twig' %}
+{% extends 'backend.html.twig' %}
 
-    {% block body %}
+{% block body %}
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-12">
+                <h3><center><strong> Übersicht der ausgeschriebenen Stellenangebote</strong></center></h3>
+            </div>
+        </div>
+    </div>
 
-        <div class="panel-heading">
-            <a class='btn btn-primary btn-xs' href="{{ path('Dashboard') }}"><span class="glyphicon glyphicon-home"></span></a>
+    <hr>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <a class='btn btn-primary btn-block btn-md' href="{{ path('Stellenangebote_erstellen') }}"><span class="glyphicon glyphicon-pencil"></span> Neues Stellenangebot anlegen</a>
+            </div>
         </div>
 
-        <div class="jumbotron">
-            <div class="row">
-                <h1 class="panel-title"><center>Übersicht der Stellenangebote</center></h1>
-            </div>
+        <hr>
 
-            <hr>
-
-            <div class="row">
-                <!-- linke Spalte -->
-                <div class="col-md-3">
-                    <a class='btn btn-primary btn-xs' href="{{ path('Stellenangebote_erstellen') }}"><span class="glyphicon glyphicon-pencil"></span> Stellenangebot anlegen</a>
-                </div>
-            </div>
-            <table class="table .table-condensed table-hover">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Jobbezeichnung</th>
-                    <th>Arbeitsort</th>
-                    <th>Erstelldatum</th>
-                    <th>Besetzungszeitpunkt</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for stellenangebote in stellenangebote %}
-                    <tr>
-                        <th scope="row"> {{ stellenangebote.id }} </th>
-                        <td> {{ stellenangebote.jobbezeichnung }} </td>
-                        <td> {{ stellenangebote.arbeitsort}} </td>
-                        <td> {{ stellenangebote.erstelldatum|date('Y-m-d') }}</td>
-                        <td> {{ stellenangebote.besetzungszeitpunkt|date('Y-m-d') }}</td>
-                        <td>
-                            <a class='btn btn-success btn-xs' href="{{ path('Stellenangebote_details', { 'id' : stellenangebote.id }) }}"><span class="glyphicon glyphicon-search"></span> Details</a>
-                            <a class='btn btn-info btn-xs' href="{{ path('Stellenangebote_bearbeiten', { 'id' : stellenangebote.id }) }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
-                            <a href="{{ path('Stellenangebote_löschen', { 'id' : stellenangebote.id }) }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Löschen</a>
-                        </td>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr class="active">
+                        <th><small>ID</small></th>
+                        <th><small>Jobbezeichnung</small></th>
+                        <th><small>Arbeitsort</small></th>
+                        <th><small>Erstelldatum</small></th>
+                        <th><small>Besetzungszeitpunkt</small></th>
+                        <th><center><small>Bearbeitungsmöglichkeiten</small></center></th>
                     </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
 
-    {% endblock %}
+                    {% for stellenangebote in stellenangebote %}
+
+                        <tbody>
+                        <tr>
+                            <th><small> {{ stellenangebote.id }}</small></th>
+                            <td><small> {{ stellenangebote.jobbezeichnung }}</small></td>
+                            <td><small> {{ stellenangebote.arbeitsort}}</small> </td>
+                            <td><small> {{ stellenangebote.erstelldatum|date('Y-m-d') }}</small></td>
+                            <td><small> {{ stellenangebote.besetzungszeitpunkt|date('Y-m-d') }}</small></td>
+                            <td>
+                                <center>
+                                    <a class='btn btn-success btn-xs' href="{{ path('Stellenangebote_details', { 'id' : stellenangebote.id }) }}"><span class="glyphicon glyphicon-search"></span> Details</a>
+                                    <a class='btn btn-info btn-xs' href="{{ path('Stellenangebote_bearbeiten', { 'id' : stellenangebote.id }) }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
+                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">
+                                        <span class="glyphicon glyphicon-remove"></span> Löschen
+                                    </button>
+                                </center>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Sind Sie sich sicher?</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div style="text-align:justify;">
+                                                    Wollen Sie dieses Stellenangebot wirklich löschen?
+                                                    <br>
+                                                    <br>
+                                                    Mit einem Klick auf den Button "Stellenangebot löschen" wird das Stellenangebot unwiderruflich gelöscht.
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Schließen und Stellenangebot nicht löschen</button>
+                                                <a href="{{ path('Stellenangebote_löschen', { 'id' : stellenangebote.id }) }}" class="btn btn-danger"> Löschen</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

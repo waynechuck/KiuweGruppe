@@ -1,0 +1,77 @@
+{% extends 'backend.html.twig' %}
+
+{% block body %}
+
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-12">
+                <h3><center><strong> Stellenangebot individuell bearbeiten</strong></center></h3>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <a class='btn btn-primary btn-block btn-md' href="{{ path('Stellenangebote_anzeigen') }}"><span class="glyphicon glyphicon-arrow-left"></span> zurück zur Übersicht der Stellenangebote!</a>
+            </div>
+        </div>
+
+        <hr>
+
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        <div class="row">
+            <!-- linke Spalte -->
+            <div class="col-md-6">
+                <div>
+                    {#@TODO kann man die 3 nicht in {{ form() }} zusammenfassen?#}
+                    {{ form_label(form.jobbezeichnung) }}
+                    {{ form_errors(form.jobbezeichnung) }}
+                    {{ form_widget(form.jobbezeichnung) }}
+
+                    {{ form_label(form.arbeitsort) }}
+                    {{ form_errors(form.arbeitsort) }}
+                    {{ form_widget(form.arbeitsort) }}
+
+                    {{ form_label(form.berufszweig) }}
+                    {{ form_errors(form.berufszweig) }}
+                    {{ form_widget(form.berufszweig) }}
+
+                    {{ form_label(form.arbeitsumfeld) }}
+                    {{ form_errors(form.arbeitsumfeld) }}
+                    {{ form_widget(form.arbeitsumfeld) }}
+
+                    {{ form_label(form.aufgaben) }}
+                    {{ form_errors(form.aufgaben) }}
+                    {{ form_widget(form.aufgaben) }}
+
+                    {{ form_label(form.joblevel) }}
+                    {{ form_errors(form.joblevel) }}
+                    {{ form_widget(form.joblevel) }}
+
+
+                </div>
+            </div>
+            <!-- rechte Spalte -->
+            <div class="col-md-6">
+                <div>
+                    {{ form_label(form.erstelldatum) }}
+                    {{ form_errors(form.erstelldatum) }}
+                    {{ form_widget(form.erstelldatum) }}
+
+                    {{ form_label(form.besetzungszeitpunkt) }}
+                    {{ form_errors(form.besetzungszeitpunkt) }}
+                    {{ form_widget(form.besetzungszeitpunkt) }}
+
+                </div>
+            </div>
+        </div>
+
+        {{ form_widget(form.save) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -4,15 +4,13 @@
 
     <div class="panel-heading">
         <div class="row">
-            <div class="col-md-1">
-                <a class='btn btn-primary btn-xs' href="{{ path('Dashboard') }}"><span class="glyphicon glyphicon-home"></span></a>
-            </div>
-
-            <div class="col-md-11">
-                <div class="panel-title"><center> Hier ist die Übersicht von allen Mitarbeitern der Kiuwe gGmbH</center></div>
+            <div class="col-md-12">
+                <h3><center><strong> Übersicht von allen Mitarbeitern der Kiuwe gGmbH</strong></center></h3>
             </div>
         </div>
     </div>
+
+    <hr>
 
     <div class="panel-body">
         <div class="row">
@@ -31,64 +29,57 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="panel-title"><strong><center> Hier ist die Übersicht von allen Mitarbeitern der Kiuwe gGmbH</center></strong></div>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-            <div class="col-md-12">
-                <table class="table table-bordered ">
+                <table class="table table-bordered">
                     <thead>
-                    <tr>
-                        <th>Personalnummer</th>
-                        <th>Vorname</th>
-                        <th>Nachname</th>
-                        <th>Position</th>
-                        <th><center> Bearbeitungsmöglichkeiten</center></th>
+                    <tr class="active">
+                        <th><small>Personalnummer</small></th>
+                        <th><small>Vorname</small></th>
+                        <th><small>Nachname</small></th>
+                        <th><small>Position</small></th>
+                        <th><center><small>Bearbeitungsmöglichkeiten</small></center></th>
                     </tr>
                     </thead>
+
 
                     <tbody>
                     {% for mitarbeiter in mitarbeiter %}
                         <tr>
-                            <td> {{ mitarbeiter.id }} </td>
-                            <td> {{ mitarbeiter.vorname }} </td>
-                            <td> {{ mitarbeiter.nachname}} </td>
-                            <td> {{ mitarbeiter.position}} </td>
+                            <td><small>{{ mitarbeiter.id }}</small></td>
+                            <td><small> {{ mitarbeiter.vorname }}</small></td>
+                            <td><small> {{ mitarbeiter.nachname}}</small></td>
+                            <td><small> {{ mitarbeiter.position}}</small></td>
                             <td>
                                 <center>
-                                <a class='btn btn-success btn-xs' href="{{ path('Mitarbeiter_details', { 'id' : mitarbeiter.id }) }}"><span class="glyphicon glyphicon-search"></span> Details</a>
-                                <a class='btn btn-info btn-xs' href="{{ path('Mitarbeiter_bearbeiten', { 'id' : mitarbeiter.id }) }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
+                                    <a class='btn btn-success btn-xs' href="{{ path('Mitarbeiter_details', { 'id' : mitarbeiter.id }) }}"><span class="glyphicon glyphicon-search"></span> Details</a>
+                                    <a class='btn btn-info btn-xs' href="{{ path('Mitarbeiter_bearbeiten', { 'id' : mitarbeiter.id }) }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">
-                                        <span class="glyphicon glyphicon-remove"></span> Löschen</a>
+                                        <span class="glyphicon glyphicon-remove"></span> Löschen
                                     </button>
+                                </center>
 
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Sind Sie sich sicher?</h4>
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Sind Sie sich sicher?</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div style="text-align:justify;">
+                                                    Wollen Sie den Mitarbeiter wirklich löschen?
+                                                    <br>
+                                                    <br>
+                                                    Mit einem Klick auf den Button "Mitarbeiter löschen" wird der Mitarbeiter unwiderruflich gelöscht.
                                                 </div>
-                                                <div class="modal-body">
-                                                    <div style="text-align:justify;">
-                                                        Wollen Sie den Mitarbeiter wirklich löschen?
-                                                        <br>
-                                                        <br>
-                                                        Mit einem Klick auf den Button "Mitarbeiter löschen" wird der Mitarbeiter unwiderruflich gelöscht.
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Schließen und Mitarbeiter nicht löschen</button>
-                                                    <a href="{{ path('Mitarbeiter_löschen', { 'id' : mitarbeiter.id }) }}" class="btn btn-danger">Mitarbeiter löschen!</a>
-                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Schließen und Mitarbeiter nicht löschen</button>
+                                                <a href="{{ path('Mitarbeiter_löschen', { 'id' : mitarbeiter.id }) }}" class="btn btn-danger">Mitarbeiter löschen!</a>
                                             </div>
                                         </div>
                                     </div>
-                                </center>
+                                </div>
                             </td>
                         </tr>
                     </tbody>

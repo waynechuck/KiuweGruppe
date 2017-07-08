@@ -3,20 +3,26 @@
 {% block body %}
 
     <div class="panel-heading">
-        <h3 class="panel-title"><center>Stellenangebot erstellen</center></h3>
+        <div class="row">
+            <div class="col-md-12">
+                <h3><center><strong> Ein neues Stellenangebot kann hier angelegt werden</strong></center></h3>
+            </div>
+        </div>
     </div>
 
-    <div class="jumbotron">
-        <a href="{{ path('Mitarbeiter_anzeigen') }}" class="btn btn-primary">zurück zur Übersicht</a>
+    <hr>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <a class='btn btn-primary btn-block btn-md' href="{{ path('Stellenangebote_anzeigen') }}"><span class="glyphicon glyphicon-arrow-left"></span> zurück zur Stellenangebotsübersicht!</a>
+            </div>
+        </div>
+
+        <hr>
 
         {{ form_start(form) }}
         {{ form_errors(form) }}
-
-        <div class="row">
-            <div class="col-md-12">
-                <h3> Hier ist es möglich ein neues Stellenangebot auszuschreiben: </h3>
-            </div>
-        </div>
 
         <div class="row">
             <!-- linke Spalte -->
