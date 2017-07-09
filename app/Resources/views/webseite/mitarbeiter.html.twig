@@ -1,0 +1,29 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+
+        <center><h1> Willkommen im Mitarbeiterbereich der Kiuwe gGmbH!</h1></center>
+
+        <br><br><br><br><br><br><br><br><br><br>
+
+        <center><h3> Bitte wählen Sie Ihren Zuständigkeitsbereich aus!</h3></center>
+
+        <hr>
+
+        <div class="col-xs-6">
+            <a class='btn btn-success btn-block' href="/profile">Mitarbeiter / innen</a>
+        </div>
+        <div class="col-xs-6">
+            <a class='btn btn-primary btn-block' href="{{ path('Dashboard') }}">Geschäftsführung</a>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

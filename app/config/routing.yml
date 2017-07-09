@@ -80,6 +80,10 @@ Stellenangebote_löschen:
 
 # Backend der Anwendung definiert!
 
+Mitarbeiter:
+    path:     /mitarbeiter
+    defaults: { _controller: AppBundle:Webseiten:mitarbeiter }
+
 Dashboard:
     path:     /dashboard
     defaults: { _controller: AppBundle:Webseiten:dashboard }
@@ -168,6 +172,14 @@ Wiki_anzeigen:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+  # FOS JS Routing für die Kalenderfunktion
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+adesigns_calendar:
+  resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
 
 
 
