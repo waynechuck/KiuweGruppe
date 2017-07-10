@@ -62,6 +62,12 @@ class WebseitenController extends Controller
         return $this->render('webseite/mitarbeiter.html.twig');
     }
 
+    public function mitarbeiter_übersichtAction()
+    {
+        return $this->render('webseite/mitarbeiter_übersicht.html.twig');
+    }
+
+
     public function impressumAction()
     {
         return $this->render('webseite/impressum.html.twig');

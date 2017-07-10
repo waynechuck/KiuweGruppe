@@ -18,7 +18,7 @@ security:
             pattern: ^/
             form_login:
                 # default Route zum Dashboard
-                default_target_path: /mitarbeiter
+                default_target_path: /mitarbeiterbereich
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
 

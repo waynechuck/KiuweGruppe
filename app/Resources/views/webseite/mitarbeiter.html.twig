@@ -1,22 +1,46 @@
-{% extends 'backend.html.twig' %}
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Basis-Webseiten HTML-Datei">
+    <meta name="author" content="Michael Trotzer">
 
-{% block title %}{% endblock %}
+    <title>{% block title %}Kiuwe GgmbH{% endblock %}</title>
 
-{% block body %}
+    {% block stylesheets %}
+        <!-- Bootstrap core CSS CND -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap core JavaSkript -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />
+    {% endblock %}
+
+</head>
+
+<body>
 
 <div class="container">
     <div class="row">
 
+        <br><br>
+
         <center><h1> Willkommen im Mitarbeiterbereich der Kiuwe gGmbH!</h1></center>
 
-        <br><br><br><br><br><br><br><br><br><br>
+        <hr>
+
+        <br><br><br><br><br><br><br>
 
         <center><h3> Bitte wählen Sie Ihren Zuständigkeitsbereich aus!</h3></center>
 
         <hr>
 
         <div class="col-xs-6">
-            <a class='btn btn-success btn-block' href="/profile">Mitarbeiter / innen</a>
+            <a class='btn btn-success btn-block' href="{{ path('Mitarbeiterbereich_Übersicht') }}">Mitarbeiter / innen</a>
         </div>
         <div class="col-xs-6">
             <a class='btn btn-primary btn-block' href="{{ path('Dashboard') }}">Geschäftsführung</a>
@@ -25,5 +49,10 @@
     </div>
 </div>
 
-
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap core JavaSkript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 {% endblock %}
+</body>
+</html>

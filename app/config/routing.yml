@@ -80,9 +80,13 @@ Stellenangebote_löschen:
 
 # Backend der Anwendung definiert!
 
-Mitarbeiter:
-    path:     /mitarbeiter
+Mitarbeiterbereich:
+    path:     /mitarbeiterbereich
     defaults: { _controller: AppBundle:Webseiten:mitarbeiter }
+
+Mitarbeiterbereich_Übersicht:
+    path:      /mitarbeiterbereich/übersicht
+    defaults: { _controller: AppBundle:Webseiten:mitarbeiter_übersicht }
 
 Dashboard:
     path:     /dashboard
