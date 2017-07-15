@@ -32,7 +32,7 @@ class StellenangeboteController extends Controller
             ->getRepository('AppBundle:Stellenangebote')
             ->findAll();
 
-        return $this->render('stellenangebote/anzeigen.html.twig', [
+        return $this->render('Backend/stellenangebote/anzeigen.html.twig', [
             'stellenangebote' => $stellenangebote
         ]);
     }
@@ -130,7 +130,7 @@ class StellenangeboteController extends Controller
             return $this->redirectToRoute('Stellenangebote_anzeigen');
         }
 
-        return $this->render('stellenangebote/erstellen.html.twig', [
+        return $this->render('Backend/stellenangebote/erstellen.html.twig', [
         'form' => $form->createView()
         ]);
     }
@@ -219,7 +219,7 @@ class StellenangeboteController extends Controller
             return $this->redirectToRoute('Stellenangebote_anzeigen');
         }
 
-        return $this->render('stellenangebote/bearbeiten.html.twig', [
+        return $this->render('Backend/stellenangebote/bearbeiten.html.twig', [
             'stellenangebote' => $stellenangebote,
             'form' => $form->createView()
         ]);
@@ -231,7 +231,7 @@ class StellenangeboteController extends Controller
             ->getRepository('AppBundle:Stellenangebote')
             ->find($id);
 
-        return $this->render('stellenangebote/details.html.twig', [
+        return $this->render('Backend/stellenangebote/details.html.twig', [
             'stellenangebot' => $stellenangebote
         ]);
     }
@@ -258,7 +258,7 @@ class StellenangeboteController extends Controller
             ->getRepository('AppBundle:Stellenangebote')
             ->findAll();
 
-        return $this->render('webseite/karriere.html.twig', [
+        return $this->render('Frontend/webseite/karriere.html.twig', [
             'stellenangebote' => $stellenangebote
         ]);
 

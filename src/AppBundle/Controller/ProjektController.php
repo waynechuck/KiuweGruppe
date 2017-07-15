@@ -15,6 +15,6 @@ class ProjektController extends Controller
 
     public function anzeigenAction()
     {
-        return $this->render('projekt/anzeigen.html.twig');
+        return $this->render('Backend/projekt/anzeigen.html.twig');
     }
 }

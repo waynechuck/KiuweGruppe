@@ -14,6 +14,6 @@ class FinanzenController extends Controller
 {
     public function anzeigenAction()
     {
-        return $this->render('finanzen/anzeigen.html.twig');
+        return $this->render('Backend/finanzen/anzeigen.html.twig');
     }
 }

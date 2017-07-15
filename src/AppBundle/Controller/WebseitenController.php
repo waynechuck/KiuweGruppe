@@ -12,49 +12,40 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class WebseitenController extends Controller
 {
-    public function startAction()
-    {
-        return $this->render('webseite/start.html.twig');
-    }
 
     public function startseiteAction()
     {
-        return $this->render('webseite/startseite.html.twig');
+        return $this->render('Frontend/webseite/startseite.html.twig');
     }
 
     public function konzeptAction()
     {
-        return $this->render('webseite/konzept.html.twig');
+        return $this->render('Frontend/webseite/konzept.html.twig');
     }
 
     public function leitbildAction()
     {
-        return $this->render('webseite/leitbild.html.twig');
-    }
-
-    public function kitaAction()
-    {
-        return $this->render('webseite/kita.html.twig');
+        return $this->render('Frontend/webseite/leitbild.html.twig');
     }
 
     public function teamAction()
     {
-        return $this->render('webseite/team.html.twig');
+        return $this->render('Frontend/webseite/team.html.twig');
     }
 
     public function kontaktAction()
     {
-        return $this->render('webseite/kontakt.html.twig');
+        return $this->render('Frontend/webseite/kontakt.html.twig');
+    }
+
+    public function impressumAction()
+    {
+        return $this->render('Frontend/webseite/impressum.html.twig');
     }
 
     public function anmeldenAction()
     {
         return $this->render('webseite/anmelden.html.twig');
-    }
-
-    public function dashboardAction()
-    {
-        return $this->render('webseite/dashboard.html.twig');
     }
 
     public function mitarbeiterAction()
@@ -67,11 +58,6 @@ class WebseitenController extends Controller
         return $this->render('webseite/mitarbeiter_übersicht.html.twig');
     }
 
-
-    public function impressumAction()
-    {
-        return $this->render('webseite/impressum.html.twig');
-    }
 
     public function anzeigenfrontendAction()
     {

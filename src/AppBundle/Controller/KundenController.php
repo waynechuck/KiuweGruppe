@@ -15,6 +15,6 @@ class KundenController extends Controller
 
     public function anzeigenAction()
     {
-        return $this->render('kunden/anzeigen.html.twig');
+        return $this->render('Backend/kunden/anzeigen.html.twig');
     }
 }

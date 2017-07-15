@@ -4,12 +4,8 @@ app:
 
 # Frontend der Anwendung im WebseitenController definiert!
 
-Start:
-    path:     /
-    defaults: { _controller: AppBundle:Webseiten:start }
-
 Startseite:
-    path:     /startseite
+    path:     /
     defaults: { _controller: AppBundle:Webseiten:startseite }
 
 Konzept:
@@ -24,10 +20,6 @@ Team:
     path:     /team
     defaults: { _controller: AppBundle:Webseiten:team }
 
-Kita:
-    path:     /kita
-    defaults: { _controller: AppBundle:Webseiten:kita }
-
 # Unterseiten im Footer
 
 Impressum:
@@ -41,6 +33,14 @@ Kontakt:
 Karriere:
     path:     /karriere
     defaults: { _controller: AppBundle:Stellenangebote:karriere}
+
+
+# Backend der Anwendung definiert!
+
+Dashboard:
+    path:     /dashboard
+    defaults: { _controller: AppBundle:Dashboard:anzeigen }
+
 
 # Bewerbungen im Dashboard bei Bewerbern
 
@@ -77,26 +77,6 @@ Stellenangebote_details:
 Stellenangebote_löschen:
     path:     /dashboard/stellenangebot/löschen/{id}
     defaults: { _controller: AppBundle:Stellenangebote:löschen }
-
-# Backend der Anwendung definiert!
-
-Mitarbeiterbereich:
-    path:     /mitarbeiterbereich
-    defaults: { _controller: AppBundle:Webseiten:mitarbeiter }
-
-Mitarbeiterbereich_Übersicht:
-    path:      /mitarbeiterbereich/übersicht
-    defaults: { _controller: AppBundle:Webseiten:mitarbeiter_übersicht }
-
-Dashboard:
-    path:     /dashboard
-    defaults: { _controller: AppBundle:Webseiten:dashboard }
-
-# Anmeldebereich! Teststatus
-
-Anmelden:
-    path:     /anmelden
-    defaults: { _controller: AppBundle:security:anmelden }
 
 # Newsseite zum Üben, warten auf Sven´s Aufgaben! Funktioniert!
 
