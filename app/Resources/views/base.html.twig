@@ -17,6 +17,8 @@
             <!-- Bootstrap core CSS -->
             <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
 
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
             <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
 
         {% endblock %}
@@ -38,16 +40,15 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                 <ul class="nav navbar-nav navbar-left">
                     <!-- Dropdown Unsere Kita -->
-                    <li><a href="{{ path('Startseite') }}">Startseite</a></li>
+                    <li><a href="{{ path('Startseite') }}">Willkommen</a></li>
                     <li><a href="{{ path('Leitbild') }}">Leitbild</a></li>
-                    <li><a href="{{ path('Konzept') }}">Konzept</a>
-                    <li><a href="{{ path('Team') }}"> Team</a></li>
-                    <li class="Kita">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Kiuwe Gruppe</a>
+                    <li><a href="{{ path('Konzept') }}">Konzept</a></li>
+                    <li><a href="{{ path('Werte') }}">Unsere Werte</a></li>
+                    <li class="KiuweGruppe">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Kiuwe Gruppe</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ path('Startseite') }}"> Kiuwe GmbH</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#test">Kiuwe gGmbH Berlin</a></li>
+                            <li><a href="{{ path('Kiuwegmbh') }}"> Kiuwe GmbH</a></li>
+                            <li><a href="#">Kiuwe gGmbH Berlin</a></li>
                             <li><a href="#">Kiuwe gGmbH Brandenburg</a></li>
                             <li><a href="#">Service Nahrung GmbH</a></li>
                             <li><a href="#">Charity Veranstaltung </a></li>
@@ -69,14 +70,14 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <center>
-            <a class="up-arrow" href="{{ path('Startseite') }}">
-                <span class="glyphicon glyphicon-chevron-up"></span>
-        </center>
+        <div class="row">
+            <a class="up-arrow">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
 
         <div class="row">
             <div class="col-sm-3">
-                <p>&copy; Design by Michael Trotzer</p>
+                &copy; Design by Michael Trotzer
             </div>
             <div class="col-sm-offset-6 col-sm-1">
                 <a href="{{ path('Impressum') }}">Impressum</a>

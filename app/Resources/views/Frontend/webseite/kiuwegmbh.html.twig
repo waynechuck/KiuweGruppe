@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}
+
+{% endblock %}
 
 {% block body %}
 
@@ -13,14 +15,46 @@
     <div class="container">
         <div class="row">
             <div class="überschrift">
-               Das Konzept der Kiuwe Gruppe
+                Das Unternehmen "Kiuwe GmbH"
             </div>
         </div>
 
         <br>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-sm-12">
+                <div class="ptext">
+                    Die Kiuwe GmbH ist das organisatorische Dach der Kiuwe-Gruppe. Sie gibt
+                    für die Unternehmen der Kiuwe-Gruppe einheitliche Qualitäts- und
+                    Prozess-Standards vor, bietet den Unternehmensteilen zentrale
+                    Verwaltungs-dienstleitungen an und treibt maßgeblich die Entwicklung
+                    der Kiuwe-Pädagogik voran.
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <img class="img-responsive img-rounded" src="{{ asset('images/Michael.jpg') }}" />
+            </div>
+            <div class="col-sm-3">
+                <img class="img-responsive img-rounded" src="{{ asset('images/Svenja.jpg') }}" />
+            </div>
+            <div class="col-sm-6">
+                <div class="ptext">
+                    Geschäftsführer
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-12">
                 <div class="ptext">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
@@ -36,14 +70,10 @@
                     nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 </div>
             </div>
-
-            <div class="col-md-6">
-                <img class="img-responsive img-rounded" src="{{ asset('images/Mats.jpeg') }}" />
-            </div>
         </div>
+
     </div>
 
     <br>
     <br>
-
 {% endblock %}

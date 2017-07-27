@@ -18,19 +18,24 @@ class WebseitenController extends Controller
         return $this->render('Frontend/webseite/startseite.html.twig');
     }
 
-    public function konzeptAction()
-    {
-        return $this->render('Frontend/webseite/konzept.html.twig');
-    }
-
     public function leitbildAction()
     {
         return $this->render('Frontend/webseite/leitbild.html.twig');
     }
 
-    public function teamAction()
+    public function konzeptAction()
     {
-        return $this->render('Frontend/webseite/team.html.twig');
+        return $this->render('Frontend/webseite/konzept.html.twig');
+    }
+
+    public function werteAction()
+    {
+        return $this->render('Frontend/webseite/werte.html.twig');
+    }
+
+    public function kiuwegmbhAction()
+    {
+        return $this->render('Frontend/webseite/kiuwegmbh.html.twig');
     }
 
     public function kontaktAction()
@@ -43,30 +48,9 @@ class WebseitenController extends Controller
         return $this->render('Frontend/webseite/impressum.html.twig');
     }
 
-    public function anmeldenAction()
+
+    public function teamAction()
     {
-        return $this->render('webseite/anmelden.html.twig');
-    }
-
-    public function mitarbeiterAction()
-    {
-        return $this->render('webseite/mitarbeiter.html.twig');
-    }
-
-    public function mitarbeiter_übersichtAction()
-    {
-        return $this->render('webseite/mitarbeiter_übersicht.html.twig');
-    }
-
-
-    public function anzeigenfrontendAction()
-    {
-        $stellenangebote = $this->getDoctrine()
-            ->getRepository('AppBundle:Stellenangebote')
-            ->findAll();
-
-        return $this->render('stellenangebote/anzeigenfrontend.html.twig', [
-            'stellenangebote' => $stellenangebote
-        ]);
+        return $this->render('Frontend/webseite/team.html.twig');
     }
 }

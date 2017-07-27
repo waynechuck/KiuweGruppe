@@ -8,17 +8,25 @@ Startseite:
     path:     /
     defaults: { _controller: AppBundle:Webseiten:startseite }
 
-Konzept:
-    path:     /konzept
-    defaults: { _controller: AppBundle:Webseiten:konzept }
-
 Leitbild:
     path:     /leitbild
     defaults: { _controller: AppBundle:Webseiten:leitbild }
 
+Konzept:
+    path:     /konzept
+    defaults: { _controller: AppBundle:Webseiten:konzept }
+
+Werte:
+    path:     /unsereWerte
+    defaults: { _controller: AppBundle:Webseiten:werte }
+
 Team:
     path:     /team
     defaults: { _controller: AppBundle:Webseiten:team }
+
+Kiuwegmbh:
+    path:     /kiuwegmbh
+    defaults: { _controller: AppBundle:Webseiten:kiuwegmbh }
 
 # Unterseiten im Footer
 
