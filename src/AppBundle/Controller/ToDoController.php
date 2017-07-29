@@ -34,7 +34,7 @@ class ToDoController extends Controller
             ->getRepository('AppBundle:ToDo')
             ->findAll();
 
-        return $this->render('todo/anzeigen.html.twig', [
+        return $this->render('Backend/todo/anzeigen.html.twig', [
             'ToDo' => $ToDo
         ]);
     }
@@ -84,7 +84,7 @@ class ToDoController extends Controller
             return $this->redirectToRoute('ToDos_anzeigen');
         }
 
-        return $this->render('todo/erstellen.html.twig', [
+        return $this->render('Backend/todo/erstellen.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -145,7 +145,7 @@ class ToDoController extends Controller
             return $this->redirectToRoute('ToDos_anzeigen');
         }
 
-        return $this->render('todo/bearbeiten.html.twig', [
+        return $this->render('Backend/todo/bearbeiten.html.twig', [
             'ToDo' => $ToDo,
             'form' => $form->createView()
         ]);
@@ -157,7 +157,7 @@ class ToDoController extends Controller
             ->getRepository('AppBundle:ToDo')
             ->find($id);
 
-        return $this->render('todo/details.html.twig', [
+        return $this->render('Backend/todo/details.html.twig', [
             'ToDo' => $ToDo
         ]);
     }

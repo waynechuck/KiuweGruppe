@@ -21,7 +21,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 
-//@TODO Klassenname groß
 class NewsController extends Controller
 {
 
@@ -32,7 +31,7 @@ class NewsController extends Controller
             ->findAll();
 
         //@TODO die gibt es nicht
-        return $this->render('news/anzeigen.html.twig', [
+        return $this->render('Backend/news/anzeigen.html.twig', [
             'news' => $news
         ]);
     }
@@ -97,7 +96,7 @@ class NewsController extends Controller
             return $this->redirectToRoute('News_anzeigen');
         }
 
-        return $this->render('news/erstellen.html.twig.html.twig', [
+        return $this->render('Backend/news/erstellen.html.twig', [
             'form' => $form->createView()
         ]);
     }

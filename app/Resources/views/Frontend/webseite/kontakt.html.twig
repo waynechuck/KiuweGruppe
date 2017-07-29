@@ -12,49 +12,56 @@
 
     <div class="container">
         <div class="row">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-youtube"></a>
-
             <div class="überschrift">
               Kontakt
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Kontakt
-                            </a>
-                        </h4>
-                    </div>
 
-                    <div class="panel-body">
-                        <div class="col-md-6">
-                            <div style="text-align:justify;">
-                                <h3> Hier finden Sie uns! </h3>
-                                <address>
-                                    <strong>Kiuwe gGmbh</strong><br>
-                                    Inhaberin: Jörg Rohde<br>
-                                    Sprengelstraße 27<br>
-                                    13353 Berlin<br>
-                                    Telefon: 0172 / 5648306 <br>
-                                    E-Mail: michael.trotzer@googlemail.com <br>
-                                    Steuer-Nr. xx/xxx/xxxxx <br>
-                                </address>
-                            </div>
-                        </div>
+        <div class="überschrift2">
+            Kontaktformular <br>
+        </div>
 
-                        <div class="col-md-6">
-                            <div style="text-align:justify;">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
 
-                            </div>
-                        </div>
-                    </div>
+                    {{ form_label(form.anrede) }}
+                    {{ form_errors(form.anrede) }}
+                    {{ form_widget(form.anrede) }}
+
+                    {{ form_label(form.nachname) }}
+                    {{ form_errors(form.nachname) }}
+                    {{ form_widget(form.nachname) }}
+                </div>
+
+                <div class="col-md-6">
+                    {{ form_label(form.vorname) }}
+                    {{ form_errors(form.vorname) }}
+                    {{ form_widget(form.vorname) }}
+
+                    {{ form_label(form.email) }}
+                    {{ form_errors(form.email) }}
+                    {{ form_widget(form.email) }}
+                </div>
+
+                <div class="col-md-12">
+                {{ form_label(form.betreff) }}
+                {{ form_errors(form.betreff) }}
+                {{ form_widget(form.betreff) }}
+
+                {{ form_label(form.nachricht) }}
+                {{ form_errors(form.nachricht) }}
+                {{ form_widget(form.nachricht) }}
+
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
                 </div>
             </div>
         </div>
     </div>
+
+    <br>
+    <br>
 {% endblock %}

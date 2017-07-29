@@ -4,24 +4,31 @@
 
 {% block body %}
 
+
+
     <div class="panel-heading">
         <div class="row">
-            <div class="col-md-1">
-                <a class='btn btn-primary btn-xs' href="{{ path('Dashboard') }}"><span class="glyphicon glyphicon-home"></span></a>
-            </div>
-
-            <div class="col-md-11">
-                <div class="panel-title"><center> Übersicht der aktuelle ToDo´s</center></div>
+            <div class="col-md-12">
+                <h3><center><strong> Übersicht der aktuellen ToDo´s</strong></center></h3>
             </div>
         </div>
     </div>
 
+    <hr>
+
     <div class="panel-body">
         <div class="row">
             <div class="col-md-4">
-                <a class="btn btn-success btn-block btn-sm" href="{{ path('ToDos_erstellen') }}">ToDo erstellen</a>
+                <a class='btn btn-primary btn-block btn-md' href="{{ path('ToDos_erstellen') }}"><span class="glyphicon glyphicon-pencil"></span> Todo erstellen</a>
+            </div>
+
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Todo suchen...">
             </div>
         </div>
+
         <hr>
 
         {% for flashMessage in app.session.flashbag.get('erstellen') %}
@@ -51,29 +58,33 @@
         {% for ToDo in ToDo %}
             <div class="jumbotron">
                 <div class="row">
-                    <div class="col-md-3">
-                        <center><strong>Bearbeitungsmöglichkeiten</strong></center> <br>
-                        <a class='btn btn-info btn-block btn-xs' href="{{ path('ToDos_bearbeiten', { 'id' : ToDo.id }) }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
-                        <a class='btn btn-danger btn-block btn-xs' href="{{ path('ToDos_löschen', { 'id' : ToDo.id }) }}"><span class="glyphicon glyphicon-remove"></span> Löschen</a>
+                    <div class="col-md-6">
+                        <div class="col-md-6">
+                            <strong>ID: </strong><br>
+                            <strong>Name des ToDo`s: </strong><br>
+                            <strong>Deadline: </strong><br>
+                            <strong>Kategorie:</strong><br>
+                            <strong>Priorität:</strong><br>
+                        </div>
+
+                        <div class="col-md-6">
+                            {{ ToDo.id }} <br>
+                            {{ ToDo.name }} <br>
+                            {{ ToDo.dueDate|date('d. F Y')}}<br>
+                            {{ ToDo.category}} <br>
+                            {{ ToDo.priority}} <br>
+                        </div>
+
+                        <div class="col-md-12">
+                            <br>
+                            <br>
+                            <strong>Bearbeitungsmöglichkeiten:</strong>
+                            <a class='btn btn-info btn-block btn-xs' href="{{ path('ToDos_bearbeiten', { 'id' : ToDo.id }) }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
+                            <a class='btn btn-danger btn-block btn-xs' href="{{ path('ToDos_löschen', { 'id' : ToDo.id }) }}"><span class="glyphicon glyphicon-remove"></span> Löschen</a>
+                        </div>
                     </div>
 
-                    <div class="col-md-2">
-                        <strong>Identifikationsnummer: </strong><br>
-                        <strong>Name des ToDo`s: </strong><br>
-                        <strong>Deadline: </strong><br>
-                        <strong>Kategorie:</strong><br>
-                        <strong>Priorität:</strong><br>
-                    </div>
-
-                    <div class="col-md-2">
-                        {{ ToDo.id }} <br>
-                        {{ ToDo.name }} <br>
-                        {{ ToDo.dueDate|date('d. F Y')}}<br>
-                        {{ ToDo.category}} <br>
-                        {{ ToDo.priority}} <br>
-                    </div>
-
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <strong> Beschreibung:<br> </strong>
                         <div style="text-align:justify;">
                             {{ ToDo.description }}

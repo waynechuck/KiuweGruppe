@@ -36,7 +36,7 @@ Impressum:
 
 Kontakt:
     path:     /kontakt
-    defaults: { _controller: AppBundle:Webseiten:kontakt}
+    defaults: { _controller: AppBundle:Kontakt:erstellen}
 
 Karriere:
     path:     /karriere
@@ -48,6 +48,16 @@ Karriere:
 Dashboard:
     path:     /dashboard
     defaults: { _controller: AppBundle:Dashboard:anzeigen }
+
+# Kontakt im Dashboard bei Kotaktformular
+
+Kontakt_anzeigen:
+    path:     /dashboard/kontaktformular
+    defaults: { _controller: AppBundle:Kontakt:anzeigen}
+
+Kontakt_löschen:
+    path:     /dashboard/kontaktformular/löschen/{id}
+    defaults: { _controller: AppBundle:Kontakt:löschen}
 
 
 # Bewerbungen im Dashboard bei Bewerbern

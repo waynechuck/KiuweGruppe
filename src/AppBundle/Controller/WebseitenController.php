@@ -38,16 +38,10 @@ class WebseitenController extends Controller
         return $this->render('Frontend/webseite/kiuwegmbh.html.twig');
     }
 
-    public function kontaktAction()
-    {
-        return $this->render('Frontend/webseite/kontakt.html.twig');
-    }
-
     public function impressumAction()
     {
         return $this->render('Frontend/webseite/impressum.html.twig');
     }
-
 
     public function teamAction()
     {
