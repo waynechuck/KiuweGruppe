@@ -31,32 +31,32 @@
                     {{ form_errors(form.anrede) }}
                     {{ form_widget(form.anrede) }}
 
-                    {{ form_label(form.nachname) }}
-                    {{ form_errors(form.nachname) }}
-                    {{ form_widget(form.nachname) }}
-                </div>
-
-                <div class="col-md-6">
                     {{ form_label(form.vorname) }}
                     {{ form_errors(form.vorname) }}
                     {{ form_widget(form.vorname) }}
+
+                    {{ form_label(form.nachname) }}
+                    {{ form_errors(form.nachname) }}
+                    {{ form_widget(form.nachname) }}
 
                     {{ form_label(form.email) }}
                     {{ form_errors(form.email) }}
                     {{ form_widget(form.email) }}
                 </div>
 
+                <div class="col-md-6">
+                    {{ form_label(form.betreff) }}
+                    {{ form_errors(form.betreff) }}
+                    {{ form_widget(form.betreff) }}
+
+                    {{ form_label(form.nachricht) }}
+                    {{ form_errors(form.nachricht) }}
+                    {{ form_widget(form.nachricht) }}
+                </div>
+
                 <div class="col-md-12">
-                {{ form_label(form.betreff) }}
-                {{ form_errors(form.betreff) }}
-                {{ form_widget(form.betreff) }}
-
-                {{ form_label(form.nachricht) }}
-                {{ form_errors(form.nachricht) }}
-                {{ form_widget(form.nachricht) }}
-
-                {{ form_widget(form) }}
-                {{ form_end(form) }}
+                    {{ form_widget(form) }}
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>
