@@ -20,10 +20,6 @@ Werte:
     path:     /unsereWerte
     defaults: { _controller: AppBundle:Webseiten:werte }
 
-Team:
-    path:     /team
-    defaults: { _controller: AppBundle:Webseiten:team }
-
 Kiuwegmbh:
     path:     /kiuwegmbh
     defaults: { _controller: AppBundle:Webseiten:kiuwegmbh }

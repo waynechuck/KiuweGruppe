@@ -7,7 +7,6 @@ body {
     padding-top: 50px;
 }
 
-
 /*
  * Global add-ons
  */
@@ -58,13 +57,12 @@ body {
 .nav-sidebar > li > a {
     padding-right: 20px;
     padding-left: 20px;
-    color: #FFFFFF;
+    color: #18BC9C;
 }
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
 }
-
 
 /*
  * Main content
@@ -82,7 +80,6 @@ body {
 .main .page-header {
     margin-top: 0;
 }
-
 
 /*
  * Placeholder dashboard ideas

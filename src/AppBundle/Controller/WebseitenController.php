@@ -42,9 +42,4 @@ class WebseitenController extends Controller
     {
         return $this->render('Frontend/webseite/impressum.html.twig');
     }
-
-    public function teamAction()
-    {
-        return $this->render('Frontend/webseite/team.html.twig');
-    }
 }

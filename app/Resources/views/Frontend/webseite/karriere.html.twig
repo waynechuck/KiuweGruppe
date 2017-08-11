@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <br>
+        <hr>
 
         <div class="row">
             <div class="col-md-12">
@@ -76,8 +76,6 @@
                     Willkommen auf der Karriereseite der Kiuwe Gruppe, aktuelle Stellenangebote finden
                     Sie hier ausgeschrieben, viel Spaß bei dem durchstöbern!
                 </div>
-
-                <hr>
 
                 <div class="row">
                     <div class="col-md-12">
@@ -110,9 +108,8 @@
                                         <span class="glyphicon glyphicon-user"></span> Berufszweig: <br>
                                         <span class="glyphicon glyphicon-calendar"></span> Stellenbesetzungszeitpunkt: <br>
                                         <br>
-                                        <br>
-
                                     </div>
+
                                     <div class="col-md-3">
                                         <strong> {{ stellenangebote.jobbezeichnung }}</strong> <br>
                                         <strong> {{ stellenangebote.id }}</strong> <br>
@@ -123,16 +120,23 @@
                                         <strong> {{ stellenangebote.besetzungszeitpunkt|date('d.m.Y') }}</strong>  <br>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        Haben Sie noch Fragen zu diesen Stellenangebot? <br>
-                                        <strong> Ansprechnpartner:</strong> {{ stellenangebote.ansprechpartner  }}<br>
-                                        <strong> Telefonnummer: </strong> {{ stellenangebote.telefonnummer  }} <br>
+
+                                    <div class="col-md-3">
+                                        <strong> Fragen zum Stellenangebot? </strong>
                                         <br>
                                         <br>
-                                        <button {{ path('Stellenangebote_details', { 'id' : stellenangebote.id }) }} type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-                                            <span class="glyphicon glyphicon-edit"></span> Hier können Sie sich bewerben</a>
-                                        </button>
+                                        Ansprechnpartner: <br>
+                                        Telefonnummer: <br>
                                     </div>
+
+                                    <div class="col-md-3">
+                                        <br>
+                                        <br>
+                                        <strong>{{ stellenangebote.ansprechpartner  }}</strong> <br>
+                                        <strong> {{ stellenangebote.telefonnummer  }} </strong> <br>
+                                    </div>
+
+
                                 </div>
 
                                 <div class="row">
@@ -141,7 +145,6 @@
                                             <span class="glyphicon glyphicon-heart"></span> Arbeitsumfeld: <strong> <br>
                                                 {{ stellenangebote.arbeitsumfeld  }}</strong>
                                         </div>
-
                                     </div>
 
                                     <div class="col-md-6">
@@ -151,13 +154,20 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <hr>
+                                        <button {{ path('Stellenangebote_details', { 'id' : stellenangebote.id }) }} type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">
+                                            <span class="glyphicon glyphicon-edit"></span> Hier können Sie sich bewerben</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                     </ul>
                 {% endfor %}
                     </div>
                 </div>
-                <br>
                 <br>
             </div>
         </div>
@@ -175,14 +185,18 @@
                     </div>
 
                     <div class="ptext">
-                        Keine passende Stelle gefunden aber trotzdem interessiert? Dann schreiben Sie doch einfach eine
-                        Initiativbewerbung!
+                        Keine passende Stelle gefunden aber es besteht dennoch interesse bei der Kiuwe Gruppe zu arbeiten?
+                        Dann schreiben Sie doch einfach eine Initiativbewerbung an uns!
+                        <br>
+                        <br>
+
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">
+                            <span class="glyphicon glyphicon-edit"></span> Hier können Sie sich bewerben</a>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-
-
 
         <br>
         <br>
@@ -198,18 +212,11 @@
                     <div class="modal-body">
                         <div style="text-align:justify;">
                             Sehr geehrte Bewerberin, <br>
-                            Sehr geehrter Bewerber <br>
+                            sehr geehrter Bewerber <br>
                             <br>
 
                             Vielen Dank dass sie Sich dazu entschieden haben, am Bewerbungsprozess der
-                            Kiuwe gGmbH teilzunehmen!Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                            ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            Kiuwe Gruppe teilzunehmen! <br><br>
 
                             Hier folgen ein paar Informationen zu der Bewerbungsstruktur! <br><br>
 

@@ -1,0 +1,21 @@
+/* Service und Logo größe */
+
+.logo-small-green {
+    color: #18BC9C;
+    font-size: 75px;
+}
+
+.logo-small-blue {
+    color: #2c3e50;
+    font-size: 75px;
+}
+
+.logo-big-green {
+    color: #18BC9C;
+    font-size: 200px;
+}
+
+.logo-big-blue {
+    color: #2c3e50;
+    font-size: 200px;
+}

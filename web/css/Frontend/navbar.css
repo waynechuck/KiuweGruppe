@@ -1,0 +1,14 @@
+/* Style the links inside the NAVBAR */
+.navbar {
+    opacity:0.95;
+}
+
+/* Style carousel */
+.carousel-font {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity:0.9;
+}

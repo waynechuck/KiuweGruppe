@@ -1,0 +1,34 @@
+/*
+Startseite individuelle Schriftarten!
+ */
+
+/* Überschrift */
+.überschrift{
+    font-size: 60px; /* Increase font size */
+    color: #2c3e50; /* Color */
+    text-align: center;
+    font-style: oblique;
+}
+
+/* Überschrift */
+.überschrift1{
+    font-size: 35px; /* Increase font size */
+    color: #18BC9C; /* Color */
+    font-style: oblique;
+    padding-top: 20px;
+}
+
+/* Überschrift */
+.überschrift2{
+    font-size: 35px; /* Increase font size */
+    color: #18BC9C; /* Color */
+    font-style: oblique;
+}
+
+
+/* Text */
+.ptext{
+    font-size: 20px; /*Schriftgröße */
+    font-style: oblique; /*Schriftstil */
+    text-align: justify; /* Blocksatz */
+}
