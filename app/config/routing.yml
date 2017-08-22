@@ -20,8 +20,8 @@ Werte:
     path:     /unsereWerte
     defaults: { _controller: AppBundle:Webseiten:werte }
 
-Kiuwegmbh:
-    path:     /kiuwegmbh
+Kiuweug:
+    path:     /kiuweug
     defaults: { _controller: AppBundle:Webseiten:kiuwegmbh }
 
 # Unterseiten im Footer
@@ -171,13 +171,6 @@ Wiki_anzeigen:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-  # FOS JS Routing für die Kalenderfunktion
-
-fos_js_routing:
-    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
-
-adesigns_calendar:
-  resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
 
 
 
