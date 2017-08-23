@@ -138,12 +138,6 @@ Finanzen_anzeigen:
     path:     /dashboard/finanzen
     defaults: { _controller: AppBundle:Finanzen:anzeigen }
 
-# Projekt
-
-Projekt_anzeigen:
-    path:     /dashboard/projekt
-    defaults: { _controller: AppBundle:Projekt:anzeigen}
-
  # FOS User Bundle
 
 fos_user:
