@@ -22,7 +22,15 @@ Werte:
 
 Kiuweug:
     path:     /kiuweug
-    defaults: { _controller: AppBundle:Webseiten:kiuwegmbh }
+    defaults: { _controller: AppBundle:Webseiten:kiuweug }
+
+Kiuweberlin:
+    path:     /kiuweberlin
+    defaults: { _controller: AppBundle:Webseiten:kiuweberlin }
+
+Kiuwebrandenburg:
+    path:     /kiuwebrandenburg
+    defaults: { _controller: AppBundle:Webseiten:kiuwebrandenburg }
 
 # Unterseiten im Footer
 

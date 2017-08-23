@@ -33,9 +33,19 @@ class WebseitenController extends Controller
         return $this->render('Frontend/webseite/werte.html.twig');
     }
 
-    public function kiuwegmbhAction()
+    public function kiuweugAction()
     {
-        return $this->render('Frontend/webseite/kiuwegmbh.html.twig');
+        return $this->render('Frontend/webseite/Kiuweug.html.twig');
+    }
+
+    public function kiuweberlinAction()
+    {
+        return $this->render('Frontend/webseite/Kiuweberlin.html.twig');
+    }
+
+    public function kiuwebrandenburgAction()
+    {
+        return $this->render('Frontend/webseite/Kiuwebrandenburg.html.twig');
     }
 
     public function impressumAction()
