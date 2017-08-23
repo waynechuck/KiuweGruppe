@@ -144,12 +144,6 @@ Projekt_anzeigen:
     path:     /dashboard/projekt
     defaults: { _controller: AppBundle:Projekt:anzeigen}
 
-# Kunden
-
-Kunden_anzeigen:
-    path:     /dashboard/kunden
-    defaults: { _controller: AppBundle:Kunden:anzeigen}
-
  # FOS User Bundle
 
 fos_user:
