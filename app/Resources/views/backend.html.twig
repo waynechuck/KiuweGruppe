@@ -73,10 +73,6 @@
             </ul>
 
             <ul class="nav nav-sidebar">
-                <li><a href="{{ path('ToDos_anzeigen') }}">Todo</a></li>
-            </ul>
-
-            <ul class="nav nav-sidebar">
                 <li><a href="{{ path('Kontakt_anzeigen') }}">Kontaktformular</a></li>
             </ul>
         </div>
@@ -92,14 +88,11 @@
     </div>
 </div>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Bootstrap core JavaSkript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 {% block javascripts %}
 
-    <link rel="stylesheet" href="{{ asset('js/main.js') }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap core JavaSkript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 {% endblock %}
 </body>

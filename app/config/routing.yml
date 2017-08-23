@@ -132,24 +132,6 @@ Mitarbeiter_löschen:
     path:     /dashboard/mitarbeiter/löschen/{id}
     defaults: { _controller: AppBundle:Mitarbeiter:löschen }
 
-# toDo
-
-ToDos_anzeigen:
-    path:     /dashboard/todos
-    defaults: { _controller: AppBundle:ToDo:anzeigen }
-
-ToDos_erstellen:
-    path:     /dashboard/todos/erstellen
-    defaults: { _controller: AppBundle:ToDo:erstellen }
-
-ToDos_bearbeiten:
-    path:     /dashboard/todos/bearbeiten/{id}
-    defaults: { _controller: AppBundle:ToDo:bearbeiten }
-
-ToDos_löschen:
-    path:     /dashboard/todos/löschen/{id}
-    defaults: { _controller: AppBundle:ToDo:löschen }
-
 # Finanzen
 
 Finanzen_anzeigen:
