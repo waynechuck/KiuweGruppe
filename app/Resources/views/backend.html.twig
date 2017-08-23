@@ -9,15 +9,14 @@
 
     <title>{% block title %}Kiuwe Gruppe{% endblock %}</title>
 
-    <!-- Bootstrap core CSS CND -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap core JavaSkript -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" rel="stylesheet">
-
-
     {% block stylesheets %}
+        <!-- Bootstrap core CSS CND -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap core JavaSkript -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" rel="stylesheet">
+
         <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />
     {% endblock %}
 
@@ -55,7 +54,6 @@
                 <li><a href="{{ (path('Dashboard')) }}">Übersicht <span class="sr-only">(current)</span></a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="{{ path('Mitarbeiter_anzeigen') }}">Mitarbeiter</a></li>
                 <li><a href="{{ path('Stellenangebote_anzeigen') }}">Stellenangebote</a></li>
                 <li><a href="{{ path('Bewerbungen_anzeigen') }}">Bewerbungen</a></li>
             </ul>
