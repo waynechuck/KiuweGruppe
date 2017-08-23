@@ -100,44 +100,6 @@ Stellenangebote_löschen:
     path:     /dashboard/stellenangebot/löschen/{id}
     defaults: { _controller: AppBundle:Stellenangebote:löschen }
 
-# Newsseite zum Üben, warten auf Sven´s Aufgaben! Funktioniert!
-
-News_anzeigen:
-    path:     /dashboard/news
-    defaults: { _controller: AppBundle:News:anzeigen }
-
-News_erstellen:
-    path:     /dashboard/news/erstellen
-    defaults: { _controller: AppBundle:News:erstellen }
-
-#Mitarbeiter
-
-Mitarbeiter_anzeigen:
-    path:     /dashboard/mitarbeiter
-    defaults: { _controller: AppBundle:Mitarbeiter:anzeigen }
-
-Mitarbeiter_erstellen:
-    path:     /dashboard/mitarbeiter/erstellen
-    defaults: { _controller: AppBundle:Mitarbeiter:erstellen }
-
-Mitarbeiter_bearbeiten:
-    path:     /dashboard/mitarbeiter/bearbeiten/{id}
-    defaults: { _controller: AppBundle:Mitarbeiter:bearbeiten }
-
-Mitarbeiter_details:
-    path:     /dashboard/mitarbeiter/details/{id}
-    defaults: { _controller: AppBundle:Mitarbeiter:details }
-
-Mitarbeiter_löschen:
-    path:     /dashboard/mitarbeiter/löschen/{id}
-    defaults: { _controller: AppBundle:Mitarbeiter:löschen }
-
-# Finanzen
-
-Finanzen_anzeigen:
-    path:     /dashboard/finanzen
-    defaults: { _controller: AppBundle:Finanzen:anzeigen }
-
  # FOS User Bundle
 
 fos_user:

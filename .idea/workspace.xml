@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/Resources/views/Backend/mitarbeiter/anzeigen.html.twig" description="&#10;    &lt;div class=&quot;panel-heading&quot;&gt;&#10;        &lt;div clas..." line="3" />
-    <bookmark url="file://$PROJECT_DIR$/app/Resources/views/Backend/mitarbeiter/anzeigen.html.twig" description="        &lt;div class=&quot;row&quot;&gt;&#10;            &lt;div class=&quot;..." line="5" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="6612bfb4-c161-4a4a-ab70-4e69dd2550a2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/Backend/finanzen/anzeigen.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FinanzenController.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/backend.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/backend.html.twig" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/Backend/mitarbeiter/anzeigen.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/Backend/mitarbeiter/bearbeiten.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/Backend/mitarbeiter/details.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/Backend/mitarbeiter/erstellen.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/Backend/news/anzeigen.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/Backend/news/bearbeiten.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/Backend/news/details.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/Backend/news/erstellen.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/MitarbeiterController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/NewsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Mitarbeiter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/News.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/MitarbeiterRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/NewsRepository.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,31 +38,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="138" column="58" lean-forward="false" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kiuweberlin.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/Frontend/webseite/kiuweberlin.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kiuwebrandenburg.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/Frontend/webseite/kiuwebrandenburg.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="17" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="14" />
+            <state relative-caret-position="1900">
+              <caret line="100" column="64" lean-forward="false" selection-start-line="100" selection-start-column="64" selection-end-line="100" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -93,7 +82,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backend.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="backend.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/backend.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
@@ -218,8 +207,8 @@
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/Frontend/webseite/kiuwebrandenburg.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/Frontend/webseite/kiuweberlin.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/backend.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
       </list>
     </option>
   </component>
@@ -728,12 +717,12 @@
       <workItem from="1501759481854" duration="2387000" />
       <workItem from="1502366830099" duration="2017000" />
       <workItem from="1502444895894" duration="7123000" />
-      <workItem from="1503480247542" duration="1204000" />
+      <workItem from="1503480247542" duration="1330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290133000" />
+    <option name="totallyTimeSpent" value="290259000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -805,7 +794,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/Backend/kontakt/bearbeiten.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/Backend/kontakt/details.html.twig" />
     <entry file="file://$PROJECT_DIR$/web/js/todo.js" />
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
@@ -1053,30 +1041,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/WebseitenController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="43" column="5" lean-forward="false" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="e#786#823#1#PHP" expanded="true" />
-            <element signature="e#908#949#1#PHP" expanded="true" />
-            <element signature="e#1039#1085#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/Frontend/webseite/kiuweug.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="65" column="52" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/Frontend/webseite/kiuwebrandenburg.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="17" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1117,18 +1085,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="138" column="58" lean-forward="false" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/backend.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="60" column="17" lean-forward="false" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Frontend/webseite/kiuwebrandenburg.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="17" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/WebseitenController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="43" column="5" lean-forward="false" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <element signature="e#786#823#1#PHP" expanded="true" />
+            <element signature="e#908#949#1#PHP" expanded="true" />
+            <element signature="e#1039#1085#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1900">
+          <caret line="100" column="64" lean-forward="false" selection-start-line="100" selection-start-column="64" selection-end-line="100" selection-end-column="64" />
           <folding />
         </state>
       </provider>
