@@ -61,7 +61,7 @@ class KontaktController extends Controller
                 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
 
             // Bestätigungbutton um das Formular zu übernehmen
-            ->add('save', SubmitType::class, ['label' => 'Nachricht senden', 'attr' => ['class' => 'btn btn-success', 'style' => 'margin-bottom:15px']])
+            ->add('save', SubmitType::class, ['label' => 'Nachricht senden', 'attr' => ['class' => 'btn btn-block btn-primary', 'style' => 'margin-bottom:15px']])
             ->getForm();
 
         $form->handleRequest($request);
@@ -90,7 +90,7 @@ class KontaktController extends Controller
             $em->flush();
 
             $this->addFlash(
-                'notice',
+                'E-Mail',
                 'Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich 
                 um Ihr Anliegen kümmern und melden uns auf die hinterlegte E-Mail-Adresse!'
             );

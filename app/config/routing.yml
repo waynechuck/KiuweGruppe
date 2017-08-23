@@ -46,7 +46,6 @@ Karriere:
     path:     /karriere
     defaults: { _controller: AppBundle:Stellenangebote:karriere}
 
-
 # Backend der Anwendung definiert!
 
 Dashboard:
@@ -62,7 +61,6 @@ Kontakt_anzeigen:
 Kontakt_löschen:
     path:     /dashboard/kontaktformular/löschen/{id}
     defaults: { _controller: AppBundle:Kontakt:löschen}
-
 
 # Bewerbungen im Dashboard bei Bewerbern
 

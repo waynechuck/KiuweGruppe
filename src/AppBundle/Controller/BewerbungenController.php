@@ -63,7 +63,7 @@ class BewerbungenController extends Controller
             // E-MailType
             ->add('email', EmailType::class, ['label' => 'E-Mail-Adresse', 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
 
-            ->add('save', SubmitType::class, ['label' => 'Bewerbung abschicken!', 'attr' => ['class' => 'btn btn-success', 'style' =>'margin-bottom:15px']])
+            ->add('save', SubmitType::class, ['label' => 'Bewerbung abschicken!', 'attr' => ['class' => 'btn btn-block btn-primary', 'style' =>'margin-bottom:15px']])
             ->getForm();
 
         $form->handleRequest($request);
@@ -106,11 +106,11 @@ class BewerbungenController extends Controller
             $em->flush();
 
             $this->addFlash(
-                'notice',
+                'Bewerbung',
                 'Die Bewerbung wurde erfolgreich abgeschickt!'
             );
 
-            return $this->redirectToRoute('Karriere');
+            return $this->redirectToRoute('Bewerbungen_erstellen');
         }
 
         return $this->render('Backend/bewerbungen/erstellen.html.twig', [
