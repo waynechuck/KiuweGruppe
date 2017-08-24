@@ -89,10 +89,20 @@ class KontaktController extends Controller
             $em->persist($kontakt);
             $em->flush();
 
+            $nachricht = \Swift_Message::newInstance()
+
+                ->setSubject($betreff)
+                ->setFrom('michael.trotzer@googlemail.com')
+                ->setTo($email)
+                ->setBody($this->renderView('EMail/sendmail.html.twig',['Vorname' => $vorname]),'text/html');
+
+            $this->get('mailer')->send($nachricht);
+
             $this->addFlash(
                 'E-Mail',
                 'Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich 
                 um Ihr Anliegen kümmern und melden uns auf die hinterlegte E-Mail-Adresse!'
+
             );
 
             return $this->redirectToRoute('Kontakt');
