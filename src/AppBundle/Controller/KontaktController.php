@@ -9,7 +9,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Kontakt;
-use AppBundle\Form\Type\ContactFormType;
+use AppBundle\Form\Type\KontaktFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -33,7 +33,7 @@ class KontaktController extends Controller
     public function erstellenAction(Request $request)
     {
         $kontakt = new kontakt;
-        $form = $this->createForm(ContactFormType::class);
+        $form = $this->createForm(KontaktFormType::class);
 
         $form->handleRequest($request);
 
