@@ -13,10 +13,6 @@ use AppBundle\Form\Type\KontaktFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Include everything for the Forms
- */
-
 class KontaktController extends Controller
 {
     public function anzeigenAction()

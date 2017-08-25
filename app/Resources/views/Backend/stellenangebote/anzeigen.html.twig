@@ -45,7 +45,6 @@
                             <td><small> {{ stellenangebote.besetzungszeitpunkt|date('Y-m-d') }}</small></td>
                             <td>
                                 <center>
-                                    <a class='btn btn-success btn-xs' href="{{ path('Stellenangebote_details', { 'id' : stellenangebote.id }) }}"><span class="glyphicon glyphicon-search"></span> Details</a>
                                     <a class='btn btn-info btn-xs' href="{{ path('Stellenangebote_bearbeiten', { 'id' : stellenangebote.id }) }}"><span class="glyphicon glyphicon-edit"></span> Bearbeiten</a>
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">
                                         <span class="glyphicon glyphicon-remove"></span> Löschen
