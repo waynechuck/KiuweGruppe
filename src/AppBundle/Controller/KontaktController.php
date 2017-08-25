@@ -9,19 +9,13 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Kontakt;
+use AppBundle\Form\Type\ContactFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Include everything for the Forms
  */
-
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-
 
 class KontaktController extends Controller
 {
@@ -39,30 +33,7 @@ class KontaktController extends Controller
     public function erstellenAction(Request $request)
     {
         $kontakt = new kontakt;
-        $form = $this->createFormBuilder($kontakt)
-
-            //TextType:
-            ->add('vorname', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('nachname', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('betreff', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-
-            //TextareaType
-            ->add('nachricht', TextareaType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-
-            // E-MailType
-            ->add('email', EmailType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-
-            //ChoiceType:
-            ->add('anrede', ChoiceType::class, ['choices' => [
-                'Herr' => 'Herr',
-                'Frau' => 'Frau',
-                'Dr.' => 'Dr.',
-                'Prof.' => 'Prof.'],
-                'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-
-            // Bestätigungbutton um das Formular zu übernehmen
-            ->add('save', SubmitType::class, ['label' => 'Nachricht senden', 'attr' => ['class' => 'btn btn-block btn-primary', 'style' => 'margin-bottom:15px']])
-            ->getForm();
+        $form = $this->createForm(ContactFormType::class);
 
         $form->handleRequest($request);
 
@@ -91,10 +62,14 @@ class KontaktController extends Controller
 
             $nachricht = \Swift_Message::newInstance()
 
-                ->setSubject($betreff)
-                ->setFrom('michael.trotzer@googlemail.com')
+                ->setSubject('Ihre Anfrage bei der Kiuwe-Gruppe')
+                ->setFrom('info@kiuwe-gruppe.de')
                 ->setTo($email)
-                ->setBody($this->renderView('EMail/sendmail.html.twig',['Vorname' => $vorname]),'text/html');
+                ->setBody($this->renderView('EMail/kontaktformular.html.twig',
+                    ['Betreff' => $betreff,
+                    'Nachname' => $nachname,
+                    'Anrede' => $anrede,
+                    ]),'text/html');
 
             $this->get('mailer')->send($nachricht);
 
