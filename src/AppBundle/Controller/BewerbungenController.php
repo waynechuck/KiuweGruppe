@@ -71,9 +71,26 @@ class BewerbungenController extends Controller
             $em->persist($bewerbungen);
             $em->flush();
 
+            $nachricht = \Swift_Message::newInstance()
+
+                ->setSubject('Ihre Bewerbungen bei der Kiuwe-Gruppe')
+                ->setFrom('info@kiuwe-gruppe.de')
+                ->setTo($email)
+                ->setBody($this->renderView('EMail/bewerbungsformular.html.twig',
+                    ['Anrede' => $anrede,
+                        'Vorname' => $vorname,
+                        'Nachname' => $nachname,
+                        'Lebenslauf' => $lebenslauf,
+                        'Anschreiben' => $bewerbungsschreiben,
+                        'WeitereDokumente' => $weitereDokumente,
+                    ]),'text/html');
+
+            $this->get('mailer')->send($nachricht);
+
             $this->addFlash(
                 'Bewerbung',
-                'Die Bewerbung wurde erfolgreich abgeschickt!'
+                'Ihre Bewerbung wurde erfolgreich eingereicht. Vielen Dank, dass Sie sich bei der
+                Kiuwe-Gruppe beworben haben!'
             );
 
             return $this->redirectToRoute('Bewerbungen_erstellen');

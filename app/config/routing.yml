@@ -52,7 +52,7 @@ Dashboard:
     path:     /dashboard
     defaults: { _controller: AppBundle:Dashboard:anzeigen }
 
-# Kontakt im Dashboard bei Kotaktformular
+# Kontakt im Dashboard bei Kontaktformular
 
 Kontakt_anzeigen:
     path:     /dashboard/kontaktformular
@@ -89,10 +89,6 @@ Stellenangebote_erstellen:
 Stellenangebote_bearbeiten:
     path:     /dashboard/stellenangebot/bearbeiten/{id}
     defaults: { _controller: AppBundle:Stellenangebote:bearbeiten }
-
-Stellenangebote_details:
-    path:     /dashboard/stellenangebot/details/{id}
-    defaults: { _controller: AppBundle:Stellenangebote:details }
 
 Stellenangebote_löschen:
     path:     /dashboard/stellenangebot/löschen/{id}
