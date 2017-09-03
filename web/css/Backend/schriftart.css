@@ -16,6 +16,7 @@ Startseite individuelle Schriftarten!
     color: #18BC9C; /* Color */
     font-style: oblique;
     padding-top: 20px;
+    text-align: center;
 }
 
 /* Überschrift */
@@ -23,6 +24,7 @@ Startseite individuelle Schriftarten!
     font-size: 35px; /* Increase font size */
     color: #18BC9C; /* Color */
     font-style: oblique;
+    text-align: center;
 }
 
 

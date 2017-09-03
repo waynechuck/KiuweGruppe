@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Micha
+ * User: Michael Trotzer
  * Date: 12.07.2017
  * Time: 15:55
  */
@@ -17,5 +17,4 @@ class DashboardController extends Controller
     {
         return $this->render('Backend/dashboard/anzeigen.html.twig');
     }
-
 }
