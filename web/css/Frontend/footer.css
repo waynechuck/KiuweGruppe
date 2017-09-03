@@ -7,12 +7,7 @@ Footer Design
     font-size: 18px;
     color: #FFFFFF;
     font-style: oblique;
-    padding: 18px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     border-color: transparent;
-}
-
-footer .glyphicon {
-    font-size: 16px;
-    margin-bottom: 30px;
-    color: #FFFFFF;
 }
