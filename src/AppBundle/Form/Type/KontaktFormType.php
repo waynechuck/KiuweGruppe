@@ -16,23 +16,22 @@ class KontaktFormType extends AbstractType
     {
         $builder
             //TextType:
-            ->add('vorname', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('nachname', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('betreff', TextType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+            ->add('vorname', TextType::class)
+            ->add('nachname', TextType::class)
+            ->add('betreff', TextType::class)
 
             //TextareaType
-            ->add('nachricht', TextareaType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px', 'rows' => 9,]])
+            ->add('nachricht', TextareaType::class, ['attr' => ['class' => 'form-control', 'rows' => 9,]])
 
             // E-MailType
-            ->add('email', EmailType::class, ['attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+            ->add('email', EmailType::class)
 
             //ChoiceType:
             ->add('anrede', ChoiceType::class, ['choices' => [
                 'Herr' => 'Herr',
                 'Frau' => 'Frau',
                 'Dr.' => 'Dr.',
-                'Prof.' => 'Prof.'],
-                'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
+                'Prof.' => 'Prof.']])
 
             // Bestätigungbutton um das Formular zu übernehmen
             ->add('save', SubmitType::class, ['label' => 'Nachricht senden', 'attr' => ['class' => 'btn btn-block btn-primary', 'style' => 'margin-bottom:15px']])
