@@ -13,22 +13,45 @@
 <div class="panel-body">
 
     <div class="row">
-        <div class="col-md-2">
-            <div class="fos_user_user_show">
-                <div class="ptext">
-                    <strong>Identifikationsnummer:</strong>
-                    <strong>Benutzername:</strong> <br>
-                    <strong>E-Mail-Adresse:</strong>
+        <div class="col-md-5">
+            <div class="überschrift2">
+                Allgemeine Profilinformationen
+            </div>
+
+            <br>
+
+            <div class="col-md-5">
+                <div class="fos_user_user_show">
+                    <div class="ptext">
+                        <strong>Identifikationsnummer:</strong>
+                        <strong>Benutzername:</strong> <br>
+                        <strong>E-Mail-Adresse:</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="fos_user_user_show">
+                    <div class="ptext">
+                        {{ user.id }} <br>
+                        {{ user.username }} <br>
+                        {{ user.email }}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="fos_user_user_show">
-                <div class="ptext">
-                    {{ user.id }} <br>
-                    {{ user.username }} <br>
-                    {{ user.email }}
-                </div>
+
+        <div class="col-md-7">
+            <div class="überschrift2">
+               Profil bearbeiten + neues Passwort vergeben
+            </div>
+
+            <div class="ptext">
+                <br>
+                Mit einem Klick auf den nachfolgenden Button kann das individuelle Profil bearbeitet werden!
+                <br>
+                <br>
+
+                <a href="/profile/edit" class="btn btn-primary btn-block btn-sm" role="button"><span class="glyphicon glyphicon-cog"></span> Hier kann das Profil bearbeitet werden!</a>
 
             </div>
         </div>

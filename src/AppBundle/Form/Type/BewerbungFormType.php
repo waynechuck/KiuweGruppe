@@ -32,7 +32,7 @@ class BewerbungFormType extends AbstractType
             ->add('bewerbungsschreiben', FileType::class, ['label' => 'Anschreiben'])
             ->add('weitereDokumente', FileType::class, ['label' => 'Dokumente'])
             // E-MailType
-            ->add('email', EmailType::class, ['label' => 'E-Mail', 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']])
-            ->add('save', SubmitType::class, ['label' => 'Bewerbung abschicken!', 'attr' => ['class' => 'btn btn-block btn-primary', 'style' => 'margin-bottom:15px']]);
+            ->add('email', EmailType::class, ['label' => 'E-Mail'])
+            ->add('save', SubmitType::class, ['label' => 'Bewerbung abschicken!', 'attr' => ['class' => 'btn btn-block btn-primary']]);
     }
 }

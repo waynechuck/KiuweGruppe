@@ -24,7 +24,7 @@ class KontaktFormType extends AbstractType
             ->add('nachricht', TextareaType::class, ['attr' => ['class' => 'form-control', 'rows' => 9,]])
 
             // E-MailType
-            ->add('email', EmailType::class)
+            ->add('email', EmailType::class, ['label' => 'E-Mail'])
 
             //ChoiceType:
             ->add('anrede', ChoiceType::class, ['choices' => [
@@ -34,7 +34,7 @@ class KontaktFormType extends AbstractType
                 'Prof.' => 'Prof.']])
 
             // Bestätigungbutton um das Formular zu übernehmen
-            ->add('save', SubmitType::class, ['label' => 'Nachricht senden', 'attr' => ['class' => 'btn btn-block btn-primary', 'style' => 'margin-bottom:15px']])
+            ->add('save', SubmitType::class, ['label' => 'Nachricht absenden!', 'attr' => ['class' => 'btn btn-block btn-primary']]);
         ;
     }
 }
